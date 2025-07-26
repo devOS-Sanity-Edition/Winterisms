@@ -1,42 +1,48 @@
 {
 	"schemaVersion": 1,
-	"id": "template",
+	"id": "winterssummerfixes",
 	"version": "${version}",
-	"name": "Template mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Winter's Summer Fixes",
+	"description": "Some datapack [and maybe code?] fixes done for the Winter's Summer modpack, packaged as a mod",
 	"authors": [
 		"devOS: Sanity Edition",
 		"Team Nautical"
 	],
 	"contributors": [
-		"Put your GitHub username here!"
+		"asojidev"
 	],
 	"contact": {
 		"homepage": "https://devos.one/",
-		"sources": "https://github.com/devOS-Sanity-Edition/fabric-nautical-template-kt"
+		"sources": "https://github.com/devOS-Sanity-Edition/winters-summer-fixes"
 	},
 	"license": "MIT",
-	"icon": "assets/template/icon.png",
+	"icon": "assets/winterssummerfixes/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			{
 				"adapter": "kotlin",
-				"value": "one.devos.nautical.template.TemplateMod"
+				"value": "one.devos.nautical.winterssummerfixes.WintersSummerFixes"
 			}
 		],
 		"client": [
 			{
 				"adapter": "kotlin",
-				"value": "one.devos.nautical.template.client.TemplateModClient"
+				"value": "one.devos.nautical.winterssummerfixes.client.WintersSummerFixesClient"
+			}
+		],
+		"server": [
+			{
+				"adapter": "kotlin",
+				"value": "one.devos.nautical.winterssummerfixes.server.WintersSummerFixesServer"
 			}
 		]
 	},
 	"mixins": [
-		"template.mixins.json"
+		"winterssummerfixes.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.5",
+		"fabricloader": ">=0.16.14",
 		"minecraft": "1.21.1",
 		"java": ">=21",
 		"fabric-api": "*",
