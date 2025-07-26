@@ -38,3 +38,9 @@ hs_err_*.log
 replay_*.log
 *.hprof
 *.jfr
+
+# Kotlin 2.0+
+.kotlin/
+
+# no.
+localLibs/

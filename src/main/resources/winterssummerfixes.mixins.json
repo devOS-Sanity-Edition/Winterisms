@@ -2,9 +2,13 @@
   "required": true,
   "package": "one.devos.nautical.winterssummerfixes.mixin",
   "compatibilityLevel": "JAVA_21",
+  "plugin": "com.moulberry.mixinconstraints.ConstraintsMixinPlugin",
   "mixins": [
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  },
+  "client": [
+    "client.LimitsGrappleInGameHudMixin"
+  ]
 }

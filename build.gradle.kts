@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.invoke
+
 plugins {
 	kotlin("jvm") version "2.2.0"
 	`maven-publish`
@@ -16,7 +18,7 @@ repositories {
 	maven("https://maven.terraformersmc.com/")
 	maven("https://maven.parchmentmc.org")
 	maven("https://mvn.devos.one/snapshots")
-	maven("https://maven.quiltmc.org/repository/release/")
+	maven("https://maven.bawnorton.com/releases") // MixinSquared
 }
 
 //All dependencies and their versions are in ./gradle/libs.versions.toml
@@ -38,7 +40,12 @@ dependencies {
 	modImplementation(libs.bundles.dependencies)
 	modLocalRuntime(libs.bundles.dev.mods)
 
+	modImplementation(files("localLibs/centered-crosshair+1.21-1.0.8.jar"))
+	modImplementation(files("localLibs/limits_grapple-0.7.3-1.21.1.jar"))
+
 	include(modImplementation("gay.asoji:fmw:1.0.0+build.8")!!) // just to avoid the basic long metadata calls
+	include(implementation(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-fabric:0.3.3")!!)!!)
+	include(implementation("com.moulberry:mixinconstraints:1.0.9")!!)
 }
 
 // Write the version to the fabric.mod.json
