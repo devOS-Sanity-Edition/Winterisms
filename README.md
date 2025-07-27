@@ -8,3 +8,4 @@ Some datapack [and maybe code?] fixes done for the Winter's Summer modpack, pack
 
 ## Additions
 - Raccoon trinkets slot for Raccoons & Rabies [thanks Cartrigger for the idea]
+  - also thanks Cartrigger for the Normal and Alternative slot texture for the Raccoon Slot

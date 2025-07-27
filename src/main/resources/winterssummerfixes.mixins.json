@@ -9,6 +9,7 @@
     "defaultRequire": 1
   },
   "client": [
-    "client.LimitsGrappleInGameHudMixin"
+    "compat.client.LimitsGrappleInGameHudColorMixin",
+    "compat.client.LimitsGrappleInGameHudCrosshairMixin"
   ]
 }
