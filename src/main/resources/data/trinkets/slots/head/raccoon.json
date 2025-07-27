@@ -1,0 +1,6 @@
+{
+    "order": -1024,
+    "icon": "trinkets:gui/slots/raccoon",
+    "drop_rule": "keep",
+    "validator_predicates": ["trinkets:tag"]
+}

@@ -42,6 +42,7 @@ dependencies {
 
 	modImplementation(files("localLibs/centered-crosshair+1.21-1.0.8.jar"))
 	modImplementation(files("localLibs/limits_grapple-0.7.3-1.21.1.jar"))
+	modImplementation(files("localLibs/trinkets-3.10.0.jar"))
 
 	include(modImplementation("gay.asoji:fmw:1.0.0+build.8")!!) // just to avoid the basic long metadata calls
 	include(implementation(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-fabric:0.3.3")!!)!!)
