@@ -19,7 +19,6 @@ repositories {
 	maven("https://maven.parchmentmc.org")
 	maven("https://mvn.devos.one/snapshots")
 	maven("https://maven.bawnorton.com/releases") // MixinSquared
-	maven("https://maven.isxander.dev/releases") // YetAnotherConfigLib
 }
 
 //All dependencies and their versions are in ./gradle/libs.versions.toml
@@ -32,25 +31,25 @@ dependencies {
 		parchment("org.parchmentmc.data:parchment-1.21.1:2024.11.17@zip")
 	})
 
-	//Fabric
+	// Fabric
 	modImplementation(libs.fabric.loader)
 	modImplementation(libs.fabric.api)
 	modImplementation(libs.fabric.language.kotlin)
 
-	//Mods
+	// Mods
 	modImplementation(libs.bundles.dependencies)
 	modLocalRuntime(libs.bundles.dev.mods)
 
 	// Config
-	modImplementation(libs.yacl)
+	include(modImplementation(libs.midnightlib.get())!!)
 
 	modImplementation(files("localLibs/centered-crosshair+1.21-1.0.8.jar"))
 	modImplementation(files("localLibs/limits_grapple-0.7.3-1.21.1.jar"))
 	modImplementation(files("localLibs/trinkets-3.10.0.jar"))
 
-	include(modImplementation("gay.asoji:fmw:1.0.0+build.8")!!) // just to avoid the basic long metadata calls
-	include(implementation(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-fabric:0.3.3")!!)!!)
-	include(implementation("com.moulberry:mixinconstraints:1.0.9")!!)
+	include(modImplementation(libs.fmw.get())!!) // just to avoid the basic long metadata calls
+	include(implementation(annotationProcessor(libs.mixinsquared.get())!!)!!)
+	include(implementation(libs.mixinconstraints.get())!!)
 }
 
 // Write the version to the fabric.mod.json

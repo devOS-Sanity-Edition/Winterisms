@@ -36,12 +36,6 @@
 				"adapter": "kotlin",
 				"value": "one.devos.nautical.winterssummerfixes.server.WintersSummerFixesServer"
 			}
-		],
-		"modmenu": [
-			{
-				"adapter": "kotlin",
-				"value": "one.devos.nautical.winterssummerfixes.config.ConfigModMenuIntegration"
-			}
 		]
 	},
 	"mixins": [
@@ -52,7 +46,6 @@
 		"minecraft": "1.21.1",
 		"java": ">=21",
 		"fabric-api": "*",
-		"fabric-language-kotlin": "*",
-		"yet_another_config_lib_v3": ">=3.7.1+1.21.1-fabric"
+		"fabric-language-kotlin": "*"
 	}
 }

@@ -1,13 +1,11 @@
 package one.devos.nautical.winterssummerfixes.mixin.compat.client;
 
 import com.bawnorton.mixinsquared.TargetHandler;
-import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import net.minecraft.client.gui.Gui;
+import net.minecraft.util.FastColor;
 import one.devos.nautical.winterssummerfixes.config.Config;
-import org.joml.Vector4f;
-import org.spongepowered.asm.mixin.Final;
+import one.devos.nautical.winterssummerfixes.utils.ConversionKt;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArgs;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
@@ -18,24 +16,22 @@ public class LimitsGrappleInGameHudColorMixin {
     @TargetHandler(mixin = "io.github.moonlight_maya.limits_grapple.mixin.render.InGameHudMixin", name = "limits_grapple$drawHitResult")
     @ModifyArgs(method = "@MixinSquared:Handler", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;setColor(FFFF)V", ordinal = 0))
     private void modifyHitColor(Args args) {
-        float[] hitColorFromConfig = Config.INSTANCE.getLimitsGrappleHitColor().getColorComponents(null);
-        Vector4f hitColor = new Vector4f(hitColorFromConfig[0], hitColorFromConfig[1], hitColorFromConfig[2], 1f);
+        int hitColor = ConversionKt.convertHexStringAsAnInt(Config.limitsGrappleHitColor);
 
-        args.set(0, hitColor.x);
-        args.set(1, hitColor.y);
-        args.set(2, hitColor.z);
-        args.set(3, hitColor.w);
+        args.set(0, FastColor.ARGB32.red(hitColor) / 255f);
+        args.set(1, FastColor.ARGB32.green(hitColor) / 255f);
+        args.set(2, FastColor.ARGB32.blue(hitColor) / 255f);
+        args.set(3, FastColor.ARGB32.alpha(hitColor) / 255f);
     }
 
     @TargetHandler(mixin = "io.github.moonlight_maya.limits_grapple.mixin.render.InGameHudMixin", name = "limits_grapple$drawHitResult")
     @ModifyArgs(method = "@MixinSquared:Handler", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;setColor(FFFF)V", ordinal = 1))
     private void modifyMissColor(Args args) {
-        float[] missColorFromConfig = Config.INSTANCE.getLimitsGrappleMissColor().getColorComponents(null);
-        Vector4f missColor = new Vector4f(missColorFromConfig[0], missColorFromConfig[1], missColorFromConfig[2], 1f);
+        int missColor = ConversionKt.convertHexStringAsAnInt(Config.limitsGrappleMissColor);
 
-        args.set(0, missColor.x);
-        args.set(1, missColor.y);
-        args.set(2, missColor.z);
-        args.set(3, missColor.w);
+        args.set(0, FastColor.ARGB32.red(missColor) / 255f);
+        args.set(1, FastColor.ARGB32.green(missColor) / 255f);
+        args.set(2, FastColor.ARGB32.blue(missColor) / 255f);
+        args.set(3, FastColor.ARGB32.alpha(missColor) / 255f);
     }
 }

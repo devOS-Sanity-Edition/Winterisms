@@ -1,27 +1,30 @@
 [versions]
-# The latest versions are available at https://fabricmc.net/develop
 minecraft = "1.21.1"
-#quilt_mappings = "1.21+build.18"
 fabric_loader = "0.16.14"
 fabric_api = "0.116.4+1.21.1"
 fabric_language_kotlin = "1.13.4+kotlin.2.2.0"
-sodium = "mc1.21.1-0.6.13-fabric"
+fmw = "1.0.0+build.8"
+midnightlib = "1.7.5+1.21.1-fabric"
+mixinconstraints = "1.0.9"
+mixinsquared = "0.3.3"
 modmenu = "11.0.3"
-yacl = "3.7.1+1.21.1-fabric"
+sodium = "mc1.21.1-0.6.13-fabric"
 
 [libraries]
-minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
-fabric_loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric_loader" }
 fabric-api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
 fabric_language_kotlin = { module = "net.fabricmc:fabric-language-kotlin", version.ref = "fabric_language_kotlin" }
-sodium = { module = "maven.modrinth:sodium", version.ref = "sodium" }
+fabric_loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric_loader" }
+fmw = { module = "gay.asoji:fmw", version.ref = "fmw" }
+midnightlib = { module = "maven.modrinth:midnightlib", version.ref = "midnightlib" }
+mixinconstraints = { module = "com.moulberry:mixinconstraints", version.ref = "mixinconstraints" }
+mixinsquared = { module = "com.github.bawnorton.mixinsquared:mixinsquared-fabric", version.ref = "mixinsquared" }
+minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
 modmenu = { module = "com.terraformersmc:modmenu", version.ref = "modmenu" }
-yacl = { module = "dev.isxander:yet-another-config-lib", version.ref = "yacl" }
+sodium = { module = "maven.modrinth:sodium", version.ref = "sodium" }
 
-# If you have multiple similar dependencies, you can declare a dependency bundle and reference it on the build script with "libs.bundles.example".
 [bundles]
-dev_mods = [ "sodium" ]
-dependencies = ["modmenu"]
+dev_mods = [ "sodium", "modmenu" ]
+dependencies = [ "midnightlib" ]
 
 [plugins]
 grgit = { id = "org.ajoberstar.grgit", version = "5.2.2"}
