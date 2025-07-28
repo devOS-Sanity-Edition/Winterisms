@@ -19,6 +19,7 @@ repositories {
 	maven("https://maven.parchmentmc.org")
 	maven("https://mvn.devos.one/snapshots")
 	maven("https://maven.bawnorton.com/releases") // MixinSquared
+	maven("https://maven.isxander.dev/releases") // YetAnotherConfigLib
 }
 
 //All dependencies and their versions are in ./gradle/libs.versions.toml
@@ -39,6 +40,9 @@ dependencies {
 	//Mods
 	modImplementation(libs.bundles.dependencies)
 	modLocalRuntime(libs.bundles.dev.mods)
+
+	// Config
+	modImplementation(libs.yacl)
 
 	modImplementation(files("localLibs/centered-crosshair+1.21-1.0.8.jar"))
 	modImplementation(files("localLibs/limits_grapple-0.7.3-1.21.1.jar"))

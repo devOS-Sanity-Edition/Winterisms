@@ -5,21 +5,23 @@ minecraft = "1.21.1"
 fabric_loader = "0.16.14"
 fabric_api = "0.116.4+1.21.1"
 fabric_language_kotlin = "1.13.4+kotlin.2.2.0"
-sodium_version = "mc1.21.1-0.6.13-fabric"
-mod_menu_version = "11.0.3"
+sodium = "mc1.21.1-0.6.13-fabric"
+modmenu = "11.0.3"
+yacl = "3.7.1+1.21.1-fabric"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
 fabric_loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric_loader" }
 fabric-api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
 fabric_language_kotlin = { module = "net.fabricmc:fabric-language-kotlin", version.ref = "fabric_language_kotlin" }
-sodium = { module = "maven.modrinth:sodium", version.ref = "sodium_version" }
-mod_menu = { module = "com.terraformersmc:modmenu", version.ref = "mod_menu_version" }
+sodium = { module = "maven.modrinth:sodium", version.ref = "sodium" }
+modmenu = { module = "com.terraformersmc:modmenu", version.ref = "modmenu" }
+yacl = { module = "dev.isxander:yet-another-config-lib", version.ref = "yacl" }
 
 # If you have multiple similar dependencies, you can declare a dependency bundle and reference it on the build script with "libs.bundles.example".
 [bundles]
 dev_mods = [ "sodium" ]
-dependencies = [ "mod_menu" ]
+dependencies = ["modmenu"]
 
 [plugins]
 grgit = { id = "org.ajoberstar.grgit", version = "5.2.2"}
