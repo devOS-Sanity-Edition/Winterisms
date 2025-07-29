@@ -1,6 +1,7 @@
 package one.devos.nautical.winterssummerfixes.mixin.compat.client.limitsgrapple;
 
 import com.bawnorton.mixinsquared.TargetHandler;
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.util.FastColor;
 import one.devos.nautical.winterssummerfixes.config.Config;
@@ -12,6 +13,7 @@ import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
 @SuppressWarnings("MixinAnnotationTarget")
 @Mixin(value = Gui.class, priority = 1050)
+@IfModLoaded("limits_grapple")
 public class LimitsGrappleInGameHudColorMixin {
     @TargetHandler(mixin = "io.github.moonlight_maya.limits_grapple.mixin.render.InGameHudMixin", name = "limits_grapple$drawHitResult")
     @ModifyArgs(method = "@MixinSquared:Handler", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;setColor(FFFF)V", ordinal = 0))

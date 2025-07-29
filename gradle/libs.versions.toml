@@ -9,6 +9,8 @@ mixinconstraints = "1.0.9"
 mixinsquared = "0.3.3"
 modmenu = "11.0.3"
 sodium = "mc1.21.1-0.6.13-fabric"
+flashback = "0.36.0"
+trinkets = "3.10.0"
 
 [libraries]
 fabric-api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
@@ -21,10 +23,12 @@ mixinsquared = { module = "com.github.bawnorton.mixinsquared:mixinsquared-fabric
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
 modmenu = { module = "com.terraformersmc:modmenu", version.ref = "modmenu" }
 sodium = { module = "maven.modrinth:sodium", version.ref = "sodium" }
+flashback = { module = "maven.modrinth:flashback", version.ref = "flashback" }
+trinkets = { module = "maven.modrinth:trinkets", version.ref = "trinkets" }
 
 [bundles]
 dev_mods = [ "sodium", "modmenu" ]
-dependencies = [ "midnightlib" ]
+dependencies = [ "midnightlib", "flashback", "trinkets" ]
 
 [plugins]
 grgit = { id = "org.ajoberstar.grgit", version = "5.2.2"}

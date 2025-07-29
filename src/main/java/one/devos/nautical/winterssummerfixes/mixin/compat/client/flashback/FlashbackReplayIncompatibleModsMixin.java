@@ -16,8 +16,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import java.util.List;
 import java.util.Objects;
 
-@IfModLoaded("flashback")
 @Mixin(value = Flashback.class, priority = 1800, remap = false)
+@IfModLoaded("flashback")
 public class FlashbackReplayIncompatibleModsMixin {
     @Unique
     private static void playRoombaSound(SoundManager handler) {
