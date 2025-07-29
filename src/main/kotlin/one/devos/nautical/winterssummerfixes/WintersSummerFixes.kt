@@ -22,6 +22,17 @@ object WintersSummerFixes : ModInitializer {
     val MOD_NAME: String = FMW.getName(MOD_ID)
 
     override fun onInitialize() {
+        // Despite the fucking name, this actually can load Datapack bullshit as well! As Octal said, `Fabric is just
+        // bad at naming things most of the time`. ugh. So we're trying to fucking override it as a resource pack
+        // instead of the data folder in the fucking mod itself because priority i guess? fucking hell lmao
+        // https://github.com/FabricMC/fabric/tree/1.21.1/fabric-resource-loader-v0/src/testmod/resources/resourcepacks/test2
+        ResourceManagerHelper.registerBuiltinResourcePack(
+            ResourceLocation.fromNamespaceAndPath(WintersSummerFixes.MOD_ID, "enderscape"),
+            FabricLoader.getInstance().getModContainer(WintersSummerFixes.MOD_ID).get(),
+            Component.literal("Enderscape Data Fixes"),
+            ResourcePackActivationType.DEFAULT_ENABLED
+        )
+
         MidnightConfig.init(MOD_ID, Config::class.java)
         LOGGER.info("[${MOD_NAME}] Winter's Summer Fixes v${FMW.getVersion(MOD_ID)} loaded!")
         LOGGER.info("[${MOD_NAME}] Who let the gay cat furry into the server room? Get them out! Oh wait they have a wrench.")
