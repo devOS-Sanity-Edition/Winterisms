@@ -16,12 +16,5 @@ object WintersSummerFixesClient : ClientModInitializer {
             Component.literal("Alt Raccoon Trinket Texture"),
             ResourcePackActivationType.NORMAL
         )
-
-        ResourceManagerHelper.registerBuiltinResourcePack(
-            ResourceLocation.fromNamespaceAndPath(WintersSummerFixes.MOD_ID, "flashbacklang"),
-            FabricLoader.getInstance().getModContainer(WintersSummerFixes.MOD_ID).get(),
-            Component.literal("Flashback Warning Override"),
-            ResourcePackActivationType.ALWAYS_ENABLED
-        )
     }
 }

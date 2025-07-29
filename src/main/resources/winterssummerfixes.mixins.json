@@ -7,9 +7,9 @@
     "defaultRequire": 1
   },
   "mixins": [
-    "compat.client.flashback.FlashbackReplayIncompatibleModsMixin"
   ],
   "client": [
+    "compat.client.flashback.FlashbackReplayIncompatibleModsMixin",
     "compat.client.flashback.FlashbackReplayIncompatibleModsTitleScreenMixin",
     "compat.client.limitsgrapple.LimitsGrappleInGameHudColorMixin"
   ]

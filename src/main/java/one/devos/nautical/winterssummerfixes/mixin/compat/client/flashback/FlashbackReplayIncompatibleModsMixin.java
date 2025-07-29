@@ -19,11 +19,6 @@ import java.util.Objects;
 @Mixin(value = Flashback.class, priority = 1800)
 @IfModLoaded("flashback")
 public class FlashbackReplayIncompatibleModsMixin {
-    @Unique
-    private static void playRoombaSound(SoundManager handler) {
-        handler.play(SimpleSoundInstance.forUI(WintersSummerFixes.INSTANCE.getROOMBA_SOUND_EVENT(), 1.0F));
-    }
-
     @ModifyReturnValue(
             method = "getReplayIncompatibleMods",
             at = @At(value = "RETURN",
@@ -33,7 +28,6 @@ public class FlashbackReplayIncompatibleModsMixin {
     )
     private static List<String> getReplayIncompatibleMods(List<String> original) {
         if (Objects.equals(Config.flashbackReplayForceAllowIncompatibleMods, Config.painAndSufferingAndSufferingAndPain)) {
-            playRoombaSound(Minecraft.getInstance().getSoundManager());
             original.clear();
         }
 

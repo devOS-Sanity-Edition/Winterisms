@@ -21,12 +21,7 @@ object WintersSummerFixes : ModInitializer {
     val LOGGER: Logger = LoggerFactory.getLogger(MOD_ID)
     val MOD_NAME: String = FMW.getName(MOD_ID)
 
-    val ROOMBA_SOUND_EVENT: SoundEvent = Registry.register(BuiltInRegistries.SOUND_EVENT, ResourceLocation.fromNamespaceAndPath(MOD_ID, "roomba"),
-        SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(MOD_ID, "roomba")))
-
     override fun onInitialize() {
-        Registry.register(BuiltInRegistries.SOUND_EVENT, ResourceLocation.fromNamespaceAndPath(MOD_ID, "roomba"),
-            SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(MOD_ID, "roomba")))
         MidnightConfig.init(MOD_ID, Config::class.java)
         LOGGER.info("[${MOD_NAME}] Winter's Summer Fixes v${FMW.getVersion(MOD_ID)} loaded!")
         LOGGER.info("[${MOD_NAME}] Who let the gay cat furry into the server room? Get them out! Oh wait they have a wrench.")
