@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import java.util.List;
 import java.util.Objects;
 
-@Mixin(value = Flashback.class, priority = 1800, remap = false)
+@Mixin(value = Flashback.class, priority = 1800)
 @IfModLoaded("flashback")
 public class FlashbackReplayIncompatibleModsMixin {
     @Unique
@@ -28,7 +28,8 @@ public class FlashbackReplayIncompatibleModsMixin {
             method = "getReplayIncompatibleMods",
             at = @At(value = "RETURN",
                     target = "Lcom/moulberry/flashback/Flashback;getReplayIncompatibleMods()Ljava/util/List;"
-            )
+            ),
+            remap = false
     )
     private static List<String> getReplayIncompatibleMods(List<String> original) {
         if (Objects.equals(Config.flashbackReplayForceAllowIncompatibleMods, Config.painAndSufferingAndSufferingAndPain)) {

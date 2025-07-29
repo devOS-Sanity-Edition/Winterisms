@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
-@Mixin(value = TitleScreen.class, priority = 1800, remap = false)
+@Mixin(value = TitleScreen.class, priority = 1800)
 @IfModLoaded("flashback")
 public class FlashbackReplayIncompatibleModsTitleScreenMixin {
     @TargetHandler(mixin = "com.moulberry.flashback.mixin.ui.MixinTitleScreen", name = "lambda$createOrPositionOpenSelectReplayScreenButton$1")
