@@ -17,6 +17,7 @@ repositories {
 	maven("https://maven.parchmentmc.org")
 	maven("https://mvn.devos.one/snapshots")
 	maven("https://maven.bawnorton.com/releases") // MixinSquared
+	maven("https://maven.ladysnake.org/releases")
 }
 
 //All dependencies and their versions are in ./gradle/libs.versions.toml
@@ -49,6 +50,7 @@ dependencies {
 
 	modImplementation("io.github.moonlight_maya:Grappling-Hook:0.7.3-1.21.1")
 	modImplementation("com.moulberry:lattice:1.2.10")
+	modImplementation("maven.modrinth:xaeros-minimap:25.2.10_Fabric_1.21")
 }
 
 // Write the version to the fabric.mod.json
