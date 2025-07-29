@@ -3,12 +3,14 @@
   "package": "one.devos.nautical.winterssummerfixes.mixin",
   "compatibilityLevel": "JAVA_21",
   "plugin": "com.moulberry.mixinconstraints.ConstraintsMixinPlugin",
-  "mixins": [
-  ],
   "injectors": {
     "defaultRequire": 1
   },
+  "mixins": [
+    "compat.client.flashback.FlashbackReplayIncompatibleModsMixin"
+  ],
   "client": [
-    "compat.client.LimitsGrappleInGameHudColorMixin"
+    "compat.client.flashback.FlashbackReplayIncompatibleModsTitleScreenMixin",
+    "compat.client.limitsgrapple.LimitsGrappleInGameHudColorMixin"
   ]
 }

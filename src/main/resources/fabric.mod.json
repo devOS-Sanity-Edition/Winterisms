@@ -3,7 +3,7 @@
 	"id": "winterssummerfixes",
 	"version": "${version}",
 	"name": "Winter's Summer Fixes",
-	"description": "Some datapack [and maybe code?] fixes done for the Winter's Summer modpack, packaged as a mod",
+	"description": "Some fixes done for the Winter's Summer modpack.",
 	"authors": [
 		"devOS: Sanity Edition",
 		"Team Nautical"

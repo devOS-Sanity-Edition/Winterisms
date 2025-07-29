@@ -11,4 +11,16 @@ public class Config extends MidnightConfig {
 
     @Entry(category = "client", isColor = true)
     public static String limitsGrappleMissColor = "#99994c";
+
+    @Comment(category = "client", centered = true)
+    public static String flashback;
+
+    @Comment(category = "client", centered = true)
+    public static String flashbackSpacer;
+
+    @Comment(category = "client")
+    public static String flashbackReplayForceAllowIncompatibleModsExtremeWarning;
+
+    @Entry(category = "client")
+    public static Boolean flashbackReplayForceAllowIncompatibleMods = false;
 }

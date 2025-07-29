@@ -1,4 +1,4 @@
-package one.devos.nautical.winterssummerfixes.mixin.compat.client;
+package one.devos.nautical.winterssummerfixes.mixin.compat.client.limitsgrapple;
 
 import com.bawnorton.mixinsquared.TargetHandler;
 import net.minecraft.client.gui.Gui;
