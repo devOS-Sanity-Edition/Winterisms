@@ -10,8 +10,8 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 @Mixin(value = TitleScreen.class, priority = 1800, remap = false)
 @IfModLoaded("flashback")
 public class FlashbackReplayIncompatibleModsTitleScreenMixin {
-    @TargetHandler(mixin = "com.moulberry.flashback.mixin.ui.MixinTitleScreen", name = "createOrPositionOpenSelectReplayScreenButton")
-    @ModifyArg(method = "@MixinSquared:Handler", at = @At(value = "INVOKE", target = "Lnet/minecraft/network/chat/Component;translatable(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;"))
+    @TargetHandler(mixin = "com.moulberry.flashback.mixin.ui.MixinTitleScreen", name = "lambda$createOrPositionOpenSelectReplayScreenButton$1")
+    @ModifyArg(method = "@MixinSquared:Handler", at = @At(value = "INVOKE", target = "Lnet/minecraft/network/chat/Component;translatable(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;", ordinal = 0))
     private static String modifyWarning(String key) {
         return "winterssummerfixes.flashback.incompatible_with_recording_description";
     }
