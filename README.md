@@ -4,7 +4,7 @@ Some fixes done for the Winter's Summer modpack.
 
 ## Fixes [so far]
 - Allow the Grappling Hook from Limits' Grapple fork to have Durability-based enchantments [Unbreaking, Mending, etc]
-- Allow Flashback's replayer viewer to work with incompatible mods [VMP, C2ME] via config [thank you IThundxr for helping with this mixin]
+- Allow Flashback's replay viewer to work with incompatible mods [VMP, C2ME] via config [thank you IThundxr for helping with this mixin]
 
 ## Additions
 - Raccoon trinkets slot for Raccoons & Rabies [thanks Cartrigger for the idea]
