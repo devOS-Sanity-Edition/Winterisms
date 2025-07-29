@@ -44,8 +44,8 @@ dependencies {
 	include(modImplementation(libs.midnightlib.get())!!)
 
 //	modImplementation(files("localLibs/centered-crosshair+1.21-1.0.8.jar"))
-//	modImplementation(files("localLibs/limits_grapple-0.7.3-1.21.1.jar"))
-//	modImplementation(files("localLibs/lattice-1.2.10.jar"))
+	modImplementation(files("localLibs/limits_grapple-0.7.3-1.21.1.jar"))
+	modImplementation(files("localLibs/lattice-1.2.10.jar"))
 
 	include(modImplementation(libs.fmw.get())!!) // just to avoid the basic long metadata calls
 	include(implementation(annotationProcessor(libs.mixinsquared.get())!!)!!)
