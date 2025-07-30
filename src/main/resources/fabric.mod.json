@@ -47,5 +47,8 @@
 		"java": ">=21",
 		"fabric-api": "*",
 		"fabric-language-kotlin": "*"
+	},
+	"breaks": {
+		"async": "*"
 	}
 }
