@@ -12,6 +12,6 @@
     "client": [
         "compat.client.flashback.FlashbackReplayIncompatibleModsMixin",
         "compat.client.flashback.FlashbackReplayIncompatibleModsTitleScreenMixin",
-        "compat.client.limitsgrapple.LimitsGrappleInGameHudColorMixin"
+      "compat.client.limits_grapple.LimitsGrappleInGameHudColorMixin"
   ]
 }

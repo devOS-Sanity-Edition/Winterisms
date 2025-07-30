@@ -30,7 +30,7 @@ object WintersSummerFixes : ModInitializer {
             ResourceLocation.fromNamespaceAndPath(WintersSummerFixes.MOD_ID, "enderscape"),
             FabricLoader.getInstance().getModContainer(WintersSummerFixes.MOD_ID).get(),
             Component.literal("Enderscape Data Fixes"),
-            ResourcePackActivationType.DEFAULT_ENABLED
+            ResourcePackActivationType.ALWAYS_ENABLED
         )
 
         MidnightConfig.init(MOD_ID, Config::class.java)
