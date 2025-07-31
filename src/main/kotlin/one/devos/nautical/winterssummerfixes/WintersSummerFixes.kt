@@ -20,6 +20,7 @@ object WintersSummerFixes : ModInitializer {
     val MOD_ID: String = "winterssummerfixes"
     val LOGGER: Logger = LoggerFactory.getLogger(MOD_ID)
     val MOD_NAME: String = FMW.getName(MOD_ID)
+    var PROBLEM_CHECK: Boolean = false // unused atm
 
     override fun onInitialize() {
         // Despite the fucking name, this actually can load Datapack bullshit as well! As Octal said, `Fabric is just

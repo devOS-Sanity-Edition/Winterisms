@@ -18,10 +18,13 @@ class InitialIncompatibleWarningScreen(lastScreen: Screen) :
         null,
         Component.translatable("winterssummerfixes.screen.initialIncompatibleWarningScreen.title")
     ) {
+        var tripped: Boolean = false
+
     override fun addContents() {
         val linearLayout = LinearLayout.vertical()
         this.layout.addToContents(linearLayout)
         if (pairModsLoaded("c2me", "flashback")) {
+            tripped = true
             linearLayout.addChild(
                 StringWidget(
                     Component.translatable("winterssummerfixes.screen.initialIncompatibleWarningScreen.c2meAndFlashbackFoundTitle").withStyle(ChatFormatting.BOLD), this.font
@@ -37,6 +40,7 @@ class InitialIncompatibleWarningScreen(lastScreen: Screen) :
         }
 
         if (modLoaded("centered-crosshair")) {
+            tripped = true
             linearLayout.addChild(
                 StringWidget(
                     Component.translatable("winterssummerfixes.screen.initialIncompatibleWarningScreen.centeredCrosshairFoundTitle").withStyle(ChatFormatting.BOLD), this.font
@@ -52,6 +56,7 @@ class InitialIncompatibleWarningScreen(lastScreen: Screen) :
         }
 
         if (pairModsLoaded("jade", "starhud")) {
+            tripped = true
             linearLayout.addChild(
                 StringWidget(
                     Component.translatable("winterssummerfixes.screen.initialIncompatibleWarningScreen.jadeAndStarHUDFoundTitle").withStyle(ChatFormatting.BOLD), this.font
@@ -67,6 +72,7 @@ class InitialIncompatibleWarningScreen(lastScreen: Screen) :
         }
 
         if (!modLoaded("iris")) {
+            tripped = true
             linearLayout.addChild(
                 StringWidget(
                     Component.translatable("winterssummerfixes.screen.initialIncompatibleWarningScreen.irisMissingTitle").withStyle(ChatFormatting.BOLD), this.font
@@ -79,6 +85,10 @@ class InitialIncompatibleWarningScreen(lastScreen: Screen) :
                 ).setMaxWidth(width - 10)
             )
             linearLayout.addChild(StringWidget(Component.empty(), this.font))
+        }
+
+        if (!tripped) {
+            onClose()
         }
     }
 
