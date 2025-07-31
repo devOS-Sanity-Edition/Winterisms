@@ -8,6 +8,7 @@ public class Config extends MidnightConfig {
     public static final String flashbackCategory = "flashback";
     public static final String limitsGrappleModId = "limits_grapple";
     public static final String flashbackModId = "flashback";
+    public static final String onboardingCategory = "onboarding";
 
     @Comment(category = limitsGrappleCategory)
     public static String limitsGrappleSwingColorWindowMissingWarning;
@@ -39,4 +40,7 @@ public class Config extends MidnightConfig {
     @Entry(category = flashbackCategory)
     @Condition(requiredModId = flashbackModId)
     public static String flashbackReplayForceAllowIncompatibleMods = "";
+
+    @Entry(category = onboardingCategory)
+    public static Boolean incompatibleModsWarningScreenViewed = false;
 }
