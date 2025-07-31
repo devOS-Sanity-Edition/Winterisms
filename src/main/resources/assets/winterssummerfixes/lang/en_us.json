@@ -12,6 +12,9 @@
   "winterssummerfixes.midnightconfig.flashbackReplayForceAllowIncompatibleModsExtremeWarning" : "§l§4WARNING: §r§cDO NOT TOUCH THIS SETTING UNLESS YOU KNOW EXACTLY WHAT YOU'RE GETTING YOURSELF INTO. FLASHBACK DISABLES THE USAGE OF VIEWING REPLAYS WITH C2ME FOR A VERY GOOD REASON. IF YOU KNOW WHAT YOU'RE DOING, THEN TYPE THE FOLLOWING INTO THE FIELD AND SAVE:",
   "winterssummerfixes.midnightconfig.flashbackReplayForceAllowIncompatibleModsExtremeWarning2" : "I understand what I am doing will cause potential instabilities with Flashback. I will not report this to Flashback support. Praise Winter. Praise Moulberry. Praise Ishland.",
 
+  "winterssummerfixes.midnightconfig.category.onboarding": "Onboarding",
+  "winterssummerfixes.midnightconfig.incompatibleModsWarningScreenViewed": "Problem Mods Screen Viewed?",
+
   "winterssummerfixes.flashback.incompatibleWithRecordingDescription": "§cYou have mods which are known to cause issues when viewing replays!§r\nIf you know §lexactly§r what you're doing, then go back to the Main Menu screen, Mods, open the Config for Winter's Summer Fixes, and enable the Flashback Force Allow Incompatible Mods in order to be able to view replays.\n\nOtherwise, please close the game, go to Prism Launcher, click edit, mods, and then click the checkbox next to the following mods in order to disable the following mods. You'll be able to view replays after.\n\n",
 
   "winterssummerfixes.screen.initialIncompatibleWarningScreen.title": "Winter's Summer Fixes - Potential Problem Mods found!",
