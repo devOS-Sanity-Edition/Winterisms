@@ -1,6 +1,0 @@
-{
-  "order": -1028,
-  "icon": "trinkets:gui/slots/goggles",
-  "drop_rule": "keep",
-  "validator_predicates": ["trinkets:tag"]
-}
