@@ -19,9 +19,9 @@
 
   "winterssummerfixes.screen.initialIncompatibleWarningScreen.title": "Winter's Summer Fixes - First Boot - Potential Problem Mods found!",
   "winterssummerfixes.screen.initialIncompatibleWarningScreen.jadeAndStarHUDFoundTitle": "Jade and StarHUD found!",
-  "winterssummerfixes.screen.initialIncompatibleWarningScreen.jadeAndStarHUDFoundDescription": "By default, the 2 overlays will overlay over each other and make StarHUD a little less readable. It is recommended that you go to StarHUD's settings and turn off the Targeted HUD, and go to Jade's config and move down its Overlay Position.",
+  "winterssummerfixes.screen.initialIncompatibleWarningScreen.jadeAndStarHUDFoundDescription": "By default, the 2 overlays will overlap over each other and make StarHUD a little less readable. It is recommended that you go to StarHUD's settings and turn off the Targeted HUD, and go to Jade's config and move down its Overlay Position.",
   "winterssummerfixes.screen.initialIncompatibleWarningScreen.c2meAndFlashbackFoundTitle": "C2ME and Flashback found!",
-  "winterssummerfixes.screen.initialIncompatibleWarningScreen.c2meAndFlashbackFoundDescription": "You might have issues, or even crashes trying to view replays, as Flashback and C2ME are incompatible with each other. A config option is provided in Winter's Summer Fixes' in-game config to bypass the check, but uh, here be dragons.",
+  "winterssummerfixes.screen.initialIncompatibleWarningScreen.c2meAndFlashbackFoundDescription": "You might have issues, or even crashes trying to view replays, as Flashback and C2ME are incompatible with each other due to how C2ME's chunks work. A config option is provided in Winter's Summer Fixes' in-game config to bypass the check, but uh, here be dragons.",
   "winterssummerfixes.screen.initialIncompatibleWarningScreen.irisMissingTitle": "Iris missing!",
   "winterssummerfixes.screen.initialIncompatibleWarningScreen.irisMissingDescription": "Even if you don't use shaders, you should have Iris installed anyway, as it provides Entity Batching, a major optimization in itself that isn't provided by Sodium, and will always run.",
   "winterssummerfixes.screen.initialIncompatibleWarningScreen.centeredCrosshairFoundTitle": "Centered Crosshair found!",
