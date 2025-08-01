@@ -48,9 +48,9 @@ dependencies {
 	include(implementation(annotationProcessor(libs.mixinsquared.get())!!)!!)
 	include(implementation(libs.mixinconstraints.get())!!)
 
-	modImplementation("io.github.moonlight_maya:Grappling-Hook:0.7.3-1.21.1")
-	modImplementation("com.moulberry:lattice:1.2.10")
-	modImplementation("maven.modrinth:xaeros-minimap:25.2.10_Fabric_1.21")
+	modImplementation(libs.grappling.hook)
+	modImplementation(libs.lattice)
+	modImplementation(libs.xaeros.minimap)
 }
 
 // Write the version to the fabric.mod.json
@@ -95,25 +95,25 @@ task("buildOrPublish") {
 
 // TODO: Uncomment for a non template mod!
 publishing {
-//	publications {
-//		create<MavenPublication>("mavenJava") {
-//			groupId = project.property("maven_group").toString()
-//			artifactId = project.property("archives_base_name").toString()
-//			version = getModVersion()
-//
-//			from(components.get("java"))
-//		}
-//	}
-//
-//	repositories {
-//		maven {
-//			url = uri("https://mvn.devos.one/${System.getenv()["PUBLISH_SUFFIX"]}/")
-//			credentials {
-//				username = System.getenv()["MAVEN_USER"]
-//				password = System.getenv()["MAVEN_PASS"]
-//			}
-//		}
-//	}
+	publications {
+		create<MavenPublication>("mavenJava") {
+			groupId = project.property("maven_group").toString()
+			artifactId = project.property("archives_base_name").toString()
+			version = getModVersion()
+
+			from(components.get("java"))
+		}
+	}
+
+	repositories {
+		maven {
+			url = uri("https://mvn.devos.one/${System.getenv()["PUBLISH_SUFFIX"]}/")
+			credentials {
+				username = System.getenv()["MAVEN_USER"]
+				password = System.getenv()["MAVEN_PASS"]
+			}
+		}
+	}
 }
 
 fun getModVersion(): String {

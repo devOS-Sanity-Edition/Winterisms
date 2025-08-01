@@ -1,30 +1,36 @@
 [versions]
-minecraft = "1.21.1"
-fabric_loader = "0.16.14"
 fabric_api = "0.116.4+1.21.1"
 fabric_language_kotlin = "1.13.4+kotlin.2.2.0"
+fabric_loader = "0.16.14"
+flashback = "hQkBepoB"
 fmw = "1.0.0+build.8"
+grappling_hook = "0.7.3-1.21.1"
+lattice = "1.2.10"
 midnightlib = "1.7.5+1.21.1-fabric"
+minecraft = "1.21.1"
 mixinconstraints = "1.0.9"
 mixinsquared = "0.3.3"
 modmenu = "11.0.3"
 sodium = "mc1.21.1-0.6.13-fabric"
-flashback = "hQkBepoB"
 trinkets = "3.10.0"
+xaeros_minimap = "25.2.10_Fabric_1.21"
 
 [libraries]
-fabric-api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
+fabric_api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
 fabric_language_kotlin = { module = "net.fabricmc:fabric-language-kotlin", version.ref = "fabric_language_kotlin" }
 fabric_loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric_loader" }
+flashback = { module = "maven.modrinth:flashback", version.ref = "flashback" }
 fmw = { module = "gay.asoji:fmw", version.ref = "fmw" }
+grappling_hook = { module = "io.github.moonlight_maya:Grappling-Hook", version.ref = "grappling_hook" }
+lattice = { module = "com.moulberry:lattice", version.ref = "lattice" }
 midnightlib = { module = "maven.modrinth:midnightlib", version.ref = "midnightlib" }
+minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
 mixinconstraints = { module = "com.moulberry:mixinconstraints", version.ref = "mixinconstraints" }
 mixinsquared = { module = "com.github.bawnorton.mixinsquared:mixinsquared-fabric", version.ref = "mixinsquared" }
-minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
 modmenu = { module = "com.terraformersmc:modmenu", version.ref = "modmenu" }
 sodium = { module = "maven.modrinth:sodium", version.ref = "sodium" }
-flashback = { module = "maven.modrinth:flashback", version.ref = "flashback" }
 trinkets = { module = "dev.emi:trinkets", version.ref = "trinkets" }
+xaeros_minimap = { module = "maven.modrinth:xaeros-minimap", version.ref = "xaeros_minimap" }
 
 [bundles]
 dev_mods = [ "sodium", "modmenu" ]
