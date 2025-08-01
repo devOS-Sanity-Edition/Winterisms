@@ -8,7 +8,6 @@ Some fixes done for the Winter's Summer modpack.
 - All Vaults in Enderscape's End Ships are replaced with Enderscape's End Vault, guaranteeing Elytra 
 
 ## Additions
-- Create Googles trinkets slot
 - Raccoon trinkets slot for Raccoons & Rabies
 - Be able to change the Grappling Hook's HUD color through the config
 - Potential Problem Mods screen on first startup
