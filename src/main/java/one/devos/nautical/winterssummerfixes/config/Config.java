@@ -10,9 +10,11 @@ public class Config extends MidnightConfig {
     public static final String onboardingCategory = "onboarding";
     public static String painAndSufferingAndSufferingAndPain = "I understand what I am doing will cause potential instabilities with Flashback. I will not report this to Flashback support. Praise Winter. Praise Moulberry. Praise Ishland.";
     @Comment(category = limitsGrappleCategory)
+    @Condition(requiredModId = limitsGrappleModId)
     public static String limitsGrappleSwingColorWindowMissingWarning;
 
     @Comment(category = limitsGrappleCategory)
+    @Condition(requiredModId = limitsGrappleModId)
     public static String limitsGrappleSwingColorWindowMissingWarningSpacer;
 
     @Entry(category = limitsGrappleCategory, isColor = true, width = 7, min = 7)
