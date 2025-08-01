@@ -5,15 +5,9 @@ import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import net.minecraft.network.chat.Component;
 import one.devos.nautical.winterssummerfixes.utils.ConversionKt;
-import org.apache.commons.lang3.StringUtils;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import xaero.common.events.ClientEvents;
-
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 @IfModLoaded("xaerominimap")
 @Mixin(ClientEvents.class)

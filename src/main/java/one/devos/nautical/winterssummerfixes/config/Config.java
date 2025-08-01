@@ -3,13 +3,12 @@ package one.devos.nautical.winterssummerfixes.config;
 import eu.midnightdust.lib.config.MidnightConfig;
 
 public class Config extends MidnightConfig {
-    public static String painAndSufferingAndSufferingAndPain = "I understand what I am doing will cause potential instabilities with Flashback. I will not report this to Flashback support. Praise Winter. Praise Moulberry. Praise Ishland.";
     public static final String limitsGrappleCategory = "limitsGrapple";
     public static final String flashbackCategory = "flashback";
     public static final String limitsGrappleModId = "limits_grapple";
     public static final String flashbackModId = "flashback";
     public static final String onboardingCategory = "onboarding";
-
+    public static String painAndSufferingAndSufferingAndPain = "I understand what I am doing will cause potential instabilities with Flashback. I will not report this to Flashback support. Praise Winter. Praise Moulberry. Praise Ishland.";
     @Comment(category = limitsGrappleCategory)
     public static String limitsGrappleSwingColorWindowMissingWarning;
 

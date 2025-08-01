@@ -1,7 +1,6 @@
 package one.devos.nautical.winterssummerfixes.client.screens
 
 import eu.midnightdust.lib.config.MidnightConfig
-import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.ChatFormatting
 import net.minecraft.client.gui.components.MultiLineTextWidget
 import net.minecraft.client.gui.components.StringWidget
@@ -20,7 +19,7 @@ class InitialIncompatibleWarningScreen(lastScreen: Screen) :
         null,
         Component.translatable("winterssummerfixes.screen.initialIncompatibleWarningScreen.title")
     ) {
-        var tripped: Boolean = false
+    var tripped: Boolean = false
 
     override fun addContents() {
         val linearLayout = LinearLayout.vertical()
@@ -29,7 +28,8 @@ class InitialIncompatibleWarningScreen(lastScreen: Screen) :
             tripped = true
             linearLayout.addChild(
                 StringWidget(
-                    Component.translatable("winterssummerfixes.screen.initialIncompatibleWarningScreen.c2meAndFlashbackFoundTitle").withStyle(ChatFormatting.BOLD), this.font
+                    Component.translatable("winterssummerfixes.screen.initialIncompatibleWarningScreen.c2meAndFlashbackFoundTitle")
+                        .withStyle(ChatFormatting.BOLD), this.font
                 ).alignCenter()
             )
             linearLayout.addChild(
@@ -45,7 +45,8 @@ class InitialIncompatibleWarningScreen(lastScreen: Screen) :
             tripped = true
             linearLayout.addChild(
                 StringWidget(
-                    Component.translatable("winterssummerfixes.screen.initialIncompatibleWarningScreen.centeredCrosshairFoundTitle").withStyle(ChatFormatting.BOLD), this.font
+                    Component.translatable("winterssummerfixes.screen.initialIncompatibleWarningScreen.centeredCrosshairFoundTitle")
+                        .withStyle(ChatFormatting.BOLD), this.font
                 ).alignCenter()
             )
             linearLayout.addChild(
@@ -61,7 +62,8 @@ class InitialIncompatibleWarningScreen(lastScreen: Screen) :
             tripped = true
             linearLayout.addChild(
                 StringWidget(
-                    Component.translatable("winterssummerfixes.screen.initialIncompatibleWarningScreen.jadeAndStarHUDFoundTitle").withStyle(ChatFormatting.BOLD), this.font
+                    Component.translatable("winterssummerfixes.screen.initialIncompatibleWarningScreen.jadeAndStarHUDFoundTitle")
+                        .withStyle(ChatFormatting.BOLD), this.font
                 ).alignCenter()
             )
             linearLayout.addChild(
@@ -77,7 +79,8 @@ class InitialIncompatibleWarningScreen(lastScreen: Screen) :
             tripped = true
             linearLayout.addChild(
                 StringWidget(
-                    Component.translatable("winterssummerfixes.screen.initialIncompatibleWarningScreen.irisMissingTitle").withStyle(ChatFormatting.BOLD), this.font
+                    Component.translatable("winterssummerfixes.screen.initialIncompatibleWarningScreen.irisMissingTitle")
+                        .withStyle(ChatFormatting.BOLD), this.font
                 ).alignCenter()
             )
             linearLayout.addChild(

@@ -3,14 +3,8 @@ package one.devos.nautical.winterssummerfixes.mixin.compat.client.flashback;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.moulberry.flashback.Flashback;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.sounds.SimpleSoundInstance;
-import net.minecraft.client.sounds.SoundManager;
-import net.minecraft.sounds.SoundEvents;
-import one.devos.nautical.winterssummerfixes.WintersSummerFixes;
 import one.devos.nautical.winterssummerfixes.config.Config;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 
 import java.util.List;
