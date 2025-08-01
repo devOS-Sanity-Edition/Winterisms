@@ -17,3 +17,5 @@ Some fixes done for the Winter's Summer modpack.
 - Cartrigger for idea of Raccoon trinket slot and the 2 raccoon slot textures
 - CephalonCosmic for internal tool to figure out which NBT files have certain values
 - IThundxr for 
+- maximumpower55 for helping with the pack
+- Oliver-makes-code for showing how to setup datapacks as a resource pack for actual working Structure NBT overriding
