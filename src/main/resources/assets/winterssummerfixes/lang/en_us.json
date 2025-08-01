@@ -2,6 +2,7 @@
   "winterssummerfixes.midnightconfig.title": "Winter's Summer Fixes",
   "winterssummerfixes.midnightconfig.category.limitsGrapple" : "Limits' Grapple",
   "winterssummerfixes.midnightconfig.limitsGrappleSwingColorWindowMissingWarning": "If you click on the Color button, and a Swing Color Picker window doesn't open, nothing can be done about that, other than just typing out your hex color value manually. If you don't know the hex value of your color, just google `[color name] hex code`.",
+  "winterssummerfixes.midnightconfig.limitsGrappleSwingColorWindowMissingWarningSpacer": "",
   "winterssummerfixes.midnightconfig.limitsGrappleHitColor": "Hit Color",
   "winterssummerfixes.midnightconfig.limitsGrappleMissColor": "Miss Color",
 
