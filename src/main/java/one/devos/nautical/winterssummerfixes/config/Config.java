@@ -12,6 +12,9 @@ public class Config extends MidnightConfig {
     @Comment(category = limitsGrappleCategory)
     public static String limitsGrappleSwingColorWindowMissingWarning;
 
+    @Comment(category = limitsGrappleCategory)
+    public static String limitsGrappleSwingColorWindowMissingWarningSpacer;
+
     @Entry(category = limitsGrappleCategory, isColor = true, width = 7, min = 7)
     @Condition(requiredModId = limitsGrappleModId)
     public static String limitsGrappleHitColor = "#3333ff";
