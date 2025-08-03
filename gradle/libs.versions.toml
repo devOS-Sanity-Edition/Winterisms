@@ -15,6 +15,7 @@ sodium = "mc1.21.1-0.6.13-fabric"
 trinkets = "3.10.0"
 xaeros_minimap = "25.2.10_Fabric_1.21"
 enderscape = "wbBsMlR1"
+journeymap = "1.21.1-6.0.0-beta.52+fabric"
 
 [libraries]
 fabric_api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
