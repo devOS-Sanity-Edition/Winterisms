@@ -7,10 +7,13 @@
         "defaultRequire": 1
     },
     "mixins": [
+        "compat.client.journeymap.WaypointParserMixin",
         "compat.client.xaeros_minimap.ClientEventsMixin",
         "compat.enderscape.MinecraftServerMixin"
     ],
     "client": [
+        "KeyBindsScreenMixin",
+        "KeyMappingAccessor",
         "TitleScreenMixin",
         "compat.client.flashback.FlashbackReplayIncompatibleModsMixin",
         "compat.client.flashback.FlashbackReplayIncompatibleModsTitleScreenMixin",

@@ -6,6 +6,10 @@ fun convertHexStringAsAnInt(hexString: String): Int {
     return hexString.removePrefix("#").toInt(16)
 }
 
+fun fixXaerosString(text: String): String {
+    return text.replaceBefore("xaero-waypoint:", "")
+}
+
 fun convertJourneyMapToXaeros(text: String): String {
     val raw = text.replace(Regex("[\\[\\]]"), "")
 

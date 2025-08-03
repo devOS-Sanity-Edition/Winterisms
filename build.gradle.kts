@@ -51,7 +51,7 @@ dependencies {
 	modImplementation(libs.grappling.hook)
 	modImplementation(libs.lattice)
 	modCompileOnly(libs.xaeros.minimap)
-	modCompileOnly(libs.journeymap)
+	modImplementation(libs.journeymap)
 
 	modCompileOnly(libs.enderscape)
 }
