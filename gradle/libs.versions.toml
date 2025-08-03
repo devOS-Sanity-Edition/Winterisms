@@ -14,6 +14,7 @@ modmenu = "11.0.3"
 sodium = "mc1.21.1-0.6.13-fabric"
 trinkets = "3.10.0"
 xaeros_minimap = "25.2.10_Fabric_1.21"
+enderscape = "wbBsMlR1"
 
 [libraries]
 fabric_api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
@@ -31,6 +32,8 @@ modmenu = { module = "com.terraformersmc:modmenu", version.ref = "modmenu" }
 sodium = { module = "maven.modrinth:sodium", version.ref = "sodium" }
 trinkets = { module = "dev.emi:trinkets", version.ref = "trinkets" }
 xaeros_minimap = { module = "maven.modrinth:xaeros-minimap", version.ref = "xaeros_minimap" }
+enderscape = { module = "maven.modrinth:enderscape", version.ref = "enderscape" }
+journeymap = { module = "maven.modrinth:journeymap", version.ref = "journeymap" }
 
 [bundles]
 dev_mods = [ "sodium", "modmenu" ]

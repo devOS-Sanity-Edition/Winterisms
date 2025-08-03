@@ -51,6 +51,7 @@ dependencies {
 	modImplementation(libs.grappling.hook)
 	modImplementation(libs.lattice)
 	modImplementation(libs.xaeros.minimap)
+	modImplementation(libs.enderscape)
 }
 
 // Write the version to the fabric.mod.json

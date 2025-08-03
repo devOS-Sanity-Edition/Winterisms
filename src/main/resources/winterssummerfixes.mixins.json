@@ -7,7 +7,8 @@
         "defaultRequire": 1
     },
     "mixins": [
-        "compat.client.xaeros_minimap.ClientEventsMixin"
+        "compat.client.xaeros_minimap.ClientEventsMixin",
+        "compat.enderscape.MinecraftServerMixin"
     ],
     "client": [
         "TitleScreenMixin",
