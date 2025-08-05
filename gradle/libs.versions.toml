@@ -16,6 +16,7 @@ trinkets = "3.10.0"
 xaeros_minimap = "25.2.10_Fabric_1.21"
 enderscape = "wbBsMlR1"
 journeymap = "1.21.1-6.0.0-beta.52+fabric"
+multikeybindings = "1.0.2"
 
 [libraries]
 fabric_api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
@@ -35,6 +36,7 @@ trinkets = { module = "dev.emi:trinkets", version.ref = "trinkets" }
 xaeros_minimap = { module = "maven.modrinth:xaeros-minimap", version.ref = "xaeros_minimap" }
 enderscape = { module = "maven.modrinth:enderscape", version.ref = "enderscape" }
 journeymap = { module = "maven.modrinth:journeymap", version.ref = "journeymap" }
+multikeybindings = { module = "maven.modrinth:multi-key-bindings", version.ref = "multikeybindings" }
 
 [bundles]
 dev_mods = [ "sodium", "modmenu" ]

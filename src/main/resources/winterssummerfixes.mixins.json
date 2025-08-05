@@ -17,6 +17,7 @@
         "TitleScreenMixin",
         "compat.client.flashback.FlashbackReplayIncompatibleModsMixin",
         "compat.client.flashback.FlashbackReplayIncompatibleModsTitleScreenMixin",
-        "compat.client.limits_grapple.LimitsGrappleInGameHudColorMixin"
+        "compat.client.limits_grapple.LimitsGrappleInGameHudColorMixin",
+        "compat.client.multikeybindings.MultiKeyBindingsHandledScreenMixin"
     ]
 }

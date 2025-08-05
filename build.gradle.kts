@@ -18,6 +18,7 @@ repositories {
 	maven("https://mvn.devos.one/snapshots")
 	maven("https://maven.bawnorton.com/releases") // MixinSquared
 	maven("https://maven.ladysnake.org/releases")
+	maven("https://cursemaven.com") // ech. curseforge.
 }
 
 //All dependencies and their versions are in ./gradle/libs.versions.toml
@@ -52,6 +53,7 @@ dependencies {
 	modImplementation(libs.lattice)
 	modCompileOnly(libs.xaeros.minimap)
 	modImplementation(libs.journeymap)
+	modImplementation(libs.multikeybindings)
 
 	modCompileOnly(libs.enderscape)
 }
