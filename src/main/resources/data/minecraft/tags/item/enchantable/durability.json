@@ -1,5 +1,35 @@
 {
   "values": [
-    "limits_grapple:grappling_hook"
+    "limits_grapple:grappling_hook",
+
+    "techreborn:steel_boots",
+    "techreborn:steel_leggings",
+    "techreborn:steel_chestplate",
+    "techreborn:steel_helmet",
+
+    "techreborn:bronze_boots",
+    "techreborn:bronze_leggings",
+    "techreborn:bronze_chestplate",
+    "techreborn:bronze_helmet",
+
+    "techreborn:silver_boots",
+    "techreborn:silver_leggings",
+    "techreborn:silver_chestplate",
+    "techreborn:silver_helmet",
+
+    "techreborn:ruby_boots",
+    "techreborn:ruby_leggings",
+    "techreborn:ruby_chestplate",
+    "techreborn:ruby_helmet",
+
+    "techreborn:sapphire_boots",
+    "techreborn:sapphire_leggings",
+    "techreborn:sapphire_chestplate",
+    "techreborn:sapphire_helmet",
+
+    "techreborn:peridot_boots",
+    "techreborn:peridot_leggings",
+    "techreborn:peridot_chestplate",
+    "techreborn:peridot_helmet"
   ]
 }
