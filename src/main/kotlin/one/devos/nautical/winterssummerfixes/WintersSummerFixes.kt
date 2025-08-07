@@ -1,5 +1,6 @@
 package one.devos.nautical.winterssummerfixes
 
+import com.illusivesoulworks.polymorph.api.PolymorphApi
 import eu.midnightdust.lib.config.MidnightConfig
 import gay.asoji.fmw.FMW
 import net.fabricmc.api.ModInitializer
@@ -8,9 +9,11 @@ import net.fabricmc.fabric.api.resource.ResourcePackActivationType
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
+import one.devos.nautical.winterssummerfixes.compat.polymorph.techreborn.TRElectricFurnaceDataComponent
 import one.devos.nautical.winterssummerfixes.config.Config
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import techreborn.blockentity.machine.tier1.ElectricFurnaceBlockEntity
 
 object WintersSummerFixes : ModInitializer {
     val MOD_ID: String = "winterssummerfixes"
@@ -29,6 +32,14 @@ object WintersSummerFixes : ModInitializer {
             Component.literal("Enderscape Data Fixes"),
             ResourcePackActivationType.ALWAYS_ENABLED
         )
+
+        PolymorphApi.getInstance().registerBlockEntity { blockEntity ->
+            if (blockEntity is ElectricFurnaceBlockEntity) {
+                return@registerBlockEntity TRElectricFurnaceDataComponent(blockEntity)
+            }
+
+            null
+        }
 
         MidnightConfig.init(MOD_ID, Config::class.java)
         LOGGER.info("[${MOD_NAME}] Winter's Summer Fixes v${FMW.getVersion(MOD_ID)} loaded!")

@@ -9,7 +9,8 @@
     "mixins": [
         "compat.client.journeymap.WaypointParserMixin",
         "compat.client.xaeros_minimap.ClientEventsMixin",
-        "compat.enderscape.MinecraftServerMixin"
+        "compat.enderscape.MinecraftServerMixin",
+        "compat.techreborn.ElectricFurnaceBlockEntityAccessor"
     ],
     "client": [
         "KeyBindsScreenMixin",

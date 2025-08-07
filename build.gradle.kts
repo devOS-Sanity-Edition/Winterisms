@@ -56,6 +56,9 @@ dependencies {
 	modImplementation(libs.multikeybindings)
 
 	modCompileOnly(libs.enderscape)
+
+	modImplementation(libs.bundles.techreborn)
+	modImplementation(libs.bundles.polymorph)
 }
 
 // Write the version to the fabric.mod.json

@@ -36,6 +36,9 @@
 				"adapter": "kotlin",
 				"value": "one.devos.nautical.winterssummerfixes.server.WintersSummerFixesServer"
 			}
+		],
+		"cardinal-components": [
+			"one.devos.nautical.winterssummerfixes.compat.polymorph.WintersPolymorphComponents"
 		]
 	},
 	"mixins": [

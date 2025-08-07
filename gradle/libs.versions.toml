@@ -17,6 +17,11 @@ xaeros_minimap = "25.2.10_Fabric_1.21"
 enderscape = "wbBsMlR1"
 journeymap = "1.21.1-6.0.0-beta.52+fabric"
 multikeybindings = "1.0.2"
+techreborn = "5776057"
+reborncore = "5776056"
+cardinal_components = "6.1.1"
+polymorph = "AGMyBSJE"
+reborn_energy = "4.1.0"
 
 [libraries]
 fabric_api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
@@ -37,10 +42,19 @@ xaeros_minimap = { module = "maven.modrinth:xaeros-minimap", version.ref = "xaer
 enderscape = { module = "maven.modrinth:enderscape", version.ref = "enderscape" }
 journeymap = { module = "maven.modrinth:journeymap", version.ref = "journeymap" }
 multikeybindings = { module = "maven.modrinth:multi-key-bindings", version.ref = "multikeybindings" }
+techreborn = { module = "curse.maven:techreborn-233564", version.ref = "techreborn" }
+reborncore = { module = "curse.maven:reborncore-237903", version.ref = "reborncore" }
+polymorph = { module = "maven.modrinth:polymorph", version.ref = "polymorph" }
+cardinal_components_base = { module = "org.ladysnake.cardinal-components-api:cardinal-components-base", version.ref = "cardinal_components" }
+cardinal_components_block = { module = "org.ladysnake.cardinal-components-api:cardinal-components-block", version.ref = "cardinal_components" }
+cardinal_components_entity = { module = "org.ladysnake.cardinal-components-api:cardinal-components-entity", version.ref = "cardinal_components" }
+reborn_energy = { module = "teamreborn:energy", version.ref = "reborn_energy" }
 
 [bundles]
 dev_mods = [ "sodium", "modmenu" ]
 dependencies = [ "midnightlib", "flashback", "trinkets" ]
+techreborn = [ "techreborn", "reborncore", "reborn_energy" ]
+polymorph = [ "polymorph", "cardinal_components_base", "cardinal_components_block", "cardinal_components_entity" ]
 
 [plugins]
 grgit = { id = "org.ajoberstar.grgit", version = "5.2.2"}
