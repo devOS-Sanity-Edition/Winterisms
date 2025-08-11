@@ -1,0 +1,30 @@
+{
+  "winterisms.midnightconfig.title": "Winterisms",
+  "winterisms.midnightconfig.category.limitsGrapple" : "Limits' Grapple",
+  "winterisms.midnightconfig.limitsGrappleSwingColorWindowMissingWarning": "If you click on the Color button, and a Swing Color Picker window doesn't open, nothing can be done about that, other than just typing out your hex color value manually. If you don't know the hex value of your color, just google `[color name] hex code`.",
+  "winterisms.midnightconfig.limitsGrappleSwingColorWindowMissingWarningSpacer": "",
+  "winterisms.midnightconfig.limitsGrappleHitColor": "Hit Color",
+  "winterisms.midnightconfig.limitsGrappleMissColor": "Miss Color",
+
+  "winterisms.midnightconfig.category.flashback": "Flashback",
+  "winterisms.midnightconfig.flashbackSpacer": "",
+  "winterisms.midnightconfig.flashbackSpacer2": "",
+  "winterisms.midnightconfig.flashbackReplayForceAllowIncompatibleMods": "Force Allow Incompatible Mods",
+  "winterisms.midnightconfig.flashbackReplayForceAllowIncompatibleModsExtremeWarning" : "§l§4WARNING: §r§cDO NOT TOUCH THIS SETTING UNLESS YOU KNOW EXACTLY WHAT YOU'RE GETTING YOURSELF INTO. FLASHBACK DISABLES THE USAGE OF VIEWING REPLAYS WITH C2ME FOR A VERY GOOD REASON. IF YOU KNOW WHAT YOU'RE DOING, THEN TYPE THE FOLLOWING INTO THE FIELD AND SAVE:",
+  "winterisms.midnightconfig.flashbackReplayForceAllowIncompatibleModsExtremeWarning2" : "I understand what I am doing will cause potential instabilities with Flashback. I will not report this to Flashback support. Praise Winter. Praise Moulberry. Praise Ishland.",
+
+  "winterisms.midnightconfig.category.onboarding": "Onboarding",
+  "winterisms.midnightconfig.incompatibleModsWarningScreenViewed": "Problem Mods Screen Viewed?",
+
+  "winterisms.flashback.incompatibleWithRecordingDescription": "§cYou have mods which are known to cause issues when viewing replays!§r\nIf you know §lexactly§r what you're doing, then go back to the Main Menu screen, Mods, open the Config for Winterisms, and enable the Flashback Force Allow Incompatible Mods in order to be able to view replays.\n\nOtherwise, please close the game, go to Prism Launcher, click edit, mods, and then click the checkbox next to the following mods in order to disable the following mods. You'll be able to view replays after.\n\n",
+
+  "winterisms.screen.initialIncompatibleWarningScreen.title": "Winterisms - First Boot - Potential Problem Mods found!",
+  "winterisms.screen.initialIncompatibleWarningScreen.jadeAndStarHUDFoundTitle": "Jade and StarHUD found!",
+  "winterisms.screen.initialIncompatibleWarningScreen.jadeAndStarHUDFoundDescription": "By default, the 2 overlays will overlap over each other and make StarHUD a little less readable. It is recommended that you go to StarHUD's settings and turn off the Targeted HUD, and go to Jade's config and move down its Overlay Position.",
+  "winterisms.screen.initialIncompatibleWarningScreen.c2meAndFlashbackFoundTitle": "C2ME and Flashback found!",
+  "winterisms.screen.initialIncompatibleWarningScreen.c2meAndFlashbackFoundDescription": "You might have issues, or even crashes trying to view replays, as Flashback and C2ME are incompatible with each other due to how C2ME's chunks work. A config option is provided in Winterisms' in-game config to bypass the check, but uh, here be dragons.",
+  "winterisms.screen.initialIncompatibleWarningScreen.irisMissingTitle": "Iris missing!",
+  "winterisms.screen.initialIncompatibleWarningScreen.irisMissingDescription": "Even if you don't use shaders, you should have Iris installed anyway, as it provides Entity Batching, a major optimization in itself that isn't provided by Sodium, and will always run.",
+  "winterisms.screen.initialIncompatibleWarningScreen.centeredCrosshairFoundTitle": "Centered Crosshair found!",
+  "winterisms.screen.initialIncompatibleWarningScreen.centeredCrosshairFoundDescription": "Centered Crosshair doesn't fix all centering inconsistencies around the crosshair, only the crosshair itself, so anything depending on the default centering will look wrong."
+}

@@ -1,48 +1,46 @@
 {
 	"schemaVersion": 1,
-	"id": "winterssummerfixes",
+	"id": "winterisms",
 	"version": "${version}",
-	"name": "Winter's Summer Fixes",
-	"description": "Some fixes done for the Winter's Summer modpack.",
+	"name": "Winterisms",
+	"description": "Some fixes done for Winter's modpacks",
 	"authors": [
 		"devOS: Sanity Edition",
 		"Team Nautical"
 	],
 	"contributors": [
-		"asojidev"
+		"asojidev",
+		"BluSpring"
 	],
 	"contact": {
 		"homepage": "https://devos.one/",
-		"sources": "https://github.com/devOS-Sanity-Edition/winters-summer-fixes"
+		"sources": "https://github.com/devOS-Sanity-Edition/Winterisms"
 	},
 	"license": "MIT",
-	"icon": "assets/winterssummerfixes/icon.png",
+	"icon": "assets/winterisms/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			{
 				"adapter": "kotlin",
-				"value": "one.devos.nautical.winterssummerfixes.WintersSummerFixes"
+				"value": "one.devos.nautical.winterisms.Winterisms"
 			}
 		],
 		"client": [
 			{
 				"adapter": "kotlin",
-				"value": "one.devos.nautical.winterssummerfixes.client.WintersSummerFixesClient"
-			}
-		],
-		"server": [
-			{
-				"adapter": "kotlin",
-				"value": "one.devos.nautical.winterssummerfixes.server.WintersSummerFixesServer"
+				"value": "one.devos.nautical.winterisms.client.WinterismsClient"
 			}
 		],
 		"cardinal-components": [
-			"one.devos.nautical.winterssummerfixes.compat.polymorph.WintersPolymorphComponents"
+			{
+				"adapter": "kotlin",
+				"value": "one.devos.nautical.winterisms.compat.polymorph.WinterismsPolymorphComponents"
+			}
 		]
 	},
 	"mixins": [
-		"winterssummerfixes.mixins.json"
+		"winterisms.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.14",
