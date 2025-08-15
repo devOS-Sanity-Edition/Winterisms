@@ -22,6 +22,7 @@ reborncore = "5776056"
 cardinal_components = "6.1.1"
 polymorph = "AGMyBSJE"
 reborn_energy = "4.1.0"
+better_end_island = "1.21.1-Fabric-3.1.2"
 
 [libraries]
 fabric_api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
@@ -49,6 +50,7 @@ cardinal_components_base = { module = "org.ladysnake.cardinal-components-api:car
 cardinal_components_block = { module = "org.ladysnake.cardinal-components-api:cardinal-components-block", version.ref = "cardinal_components" }
 cardinal_components_entity = { module = "org.ladysnake.cardinal-components-api:cardinal-components-entity", version.ref = "cardinal_components" }
 reborn_energy = { module = "teamreborn:energy", version.ref = "reborn_energy" }
+better_end_island = { module = "maven.modrinth:yungs-better-end-island", version.ref = "better_end_island" }
 
 [bundles]
 dev_mods = [ "sodium", "modmenu" ]

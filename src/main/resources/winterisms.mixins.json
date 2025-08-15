@@ -1,24 +1,25 @@
 {
-    "required": true,
-    "package": "one.devos.nautical.winterisms.mixin",
-    "compatibilityLevel": "JAVA_21",
-    "plugin": "com.moulberry.mixinconstraints.ConstraintsMixinPlugin",
-    "injectors": {
-        "defaultRequire": 1
-    },
-    "mixins": [
-        "compat.journeymap.WaypointParserMixin",
-        "compat.xaeros_minimap.ClientEventsMixin",
-        "compat.enderscape.MinecraftServerMixin",
-        "compat.techreborn.ElectricFurnaceBlockEntityAccessor"
-    ],
-    "client": [
-        "KeyBindsScreenMixin",
-        "KeyMappingAccessor",
-        "TitleScreenMixin",
-        "compat.client.flashback.FlashbackReplayIncompatibleModsMixin",
-        "compat.client.flashback.FlashbackReplayIncompatibleModsTitleScreenMixin",
-        "compat.client.limits_grapple.LimitsGrappleInGameHudColorMixin",
-        "compat.client.multikeybindings.MultiKeyBindingsHandledScreenMixin"
-    ]
+  "required": true,
+  "package": "one.devos.nautical.winterisms.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "com.moulberry.mixinconstraints.ConstraintsMixinPlugin",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "EndDragonFightMixin",
+    "compat.enderscape.MinecraftServerMixin",
+    "compat.journeymap.WaypointParserMixin",
+    "compat.techreborn.ElectricFurnaceBlockEntityAccessor",
+    "compat.xaeros_minimap.ClientEventsMixin"
+  ],
+  "client": [
+    "KeyBindsScreenMixin",
+    "KeyMappingAccessor",
+    "TitleScreenMixin",
+    "compat.client.flashback.FlashbackReplayIncompatibleModsMixin",
+    "compat.client.flashback.FlashbackReplayIncompatibleModsTitleScreenMixin",
+    "compat.client.limits_grapple.LimitsGrappleInGameHudColorMixin",
+    "compat.client.multikeybindings.MultiKeyBindingsHandledScreenMixin"
+  ]
 }

@@ -54,6 +54,7 @@ dependencies {
 	modCompileOnly(libs.xaeros.minimap)
 	modImplementation(libs.journeymap)
 	modImplementation(libs.multikeybindings)
+	modImplementation(libs.better.end.island)
 
 	modCompileOnly(libs.enderscape)
 

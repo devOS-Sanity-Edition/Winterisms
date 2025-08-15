@@ -14,6 +14,7 @@ Some fixes done for the Winter's modpacks.
 - Be able to change the Grappling Hook's HUD color through the config
 - Potential Problem Mods screen on first startup
 - Be able to click on Journeymap formatted waypoints if you use Xaero's [Journey already integrates the other way around]
+- Everyone in the end during an end fight gets a dragon egg
 
 ## Credits
 - BluSpring for.. basically half of this mod and why it even exists. Major major code help.
@@ -22,6 +23,7 @@ Some fixes done for the Winter's modpacks.
 - IThundxr for 
 - maximumpower55 for helping with the pack
 - Oliver-makes-code for showing how to setup datapacks as a resource pack for actual working Structure NBT overriding
+- ims212 for end dragon fight mixin
 
 ## License
 As per usual with all my projects, [MIT License](LICENSE).
