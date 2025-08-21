@@ -1,6 +1,5 @@
 package one.devos.nautical.winterisms.client.screens
 
-import eu.midnightdust.lib.config.MidnightConfig
 import net.minecraft.ChatFormatting
 import net.minecraft.client.gui.components.MultiLineTextWidget
 import net.minecraft.client.gui.components.StringWidget
@@ -9,7 +8,6 @@ import net.minecraft.client.gui.screens.Screen
 import net.minecraft.client.gui.screens.options.OptionsSubScreen
 import net.minecraft.network.chat.Component
 import one.devos.nautical.winterisms.config.Config
-import one.devos.nautical.winterisms.Winterisms
 import one.devos.nautical.winterisms.utils.modLoaded
 import one.devos.nautical.winterisms.utils.pairModsLoaded
 

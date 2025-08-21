@@ -62,7 +62,7 @@ fun convertJourneyMapToXaeros(text: String): String {
 // thanks Deftu for writing this generic for me when i asked about generics lol
 inline fun <reified T> translate(key: String): T {
     return when (T::class) {
-        String::class -> I18n.get(key)
+        String::class -> Component.translatable(key).string
         Component::class -> Component.translatable(key)
         else -> throw IllegalArgumentException("Unsupported type: ${T::class.simpleName}. Use String or Component.")
     } as T

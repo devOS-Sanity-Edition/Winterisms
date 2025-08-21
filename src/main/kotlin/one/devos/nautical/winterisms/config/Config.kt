@@ -6,11 +6,10 @@ import net.fabricmc.loader.api.FabricLoader
 import one.devos.nautical.winterisms.Winterisms
 import one.devos.nautical.winterisms.utils.translate
 import java.awt.Color
-import java.awt.Component
 import java.io.File
 
 object Config : Vigilant(
-    File("${FabricLoader.getInstance().configDir}/winterisms.toml"),
+    File(FabricLoader.getInstance().configDir.toFile(), "winterisms.toml"),
     "${FMW.getName(Winterisms.MOD_ID)} v${FMW.getVersion(Winterisms.MOD_ID)}"
 ) {
     var painAndSufferingAndSufferingAndPain: String =
@@ -21,35 +20,40 @@ object Config : Vigilant(
     var incompatibleModsWarningScreenViewed: Boolean = false
 
     init {
-        category(translate("winterisms.config.category.modifications")) {
-            subcategory(translate("winterisms.config.subcategory.limitsGrapple")) {
+        // all plans of using internationalization has fallen apart so we have to hard code for now, at least until
+        // there's a way you can custom define in the config what a key is, so forgive me for hardcoding this mfer
+        category("Mod Modifications") {
+            subcategory("Limits' Grapple") {
                 color(::limitsGrappleHitColor,
-                    translate("winterisms.config.limitsGrapple.hitColor.title"),
-                    translate("winterisms.config.limitsGrapple.hitColor.description"),
+                    "Hit Color",
+                    "Color that shows on your Grappling HUD when you're able to grapple.",
                     allowAlpha = false
                 )
                 color(::limitsGrappleMissColor,
-                    translate("winterisms.config.limitsGrapple.missColor.title"),
-                    translate("winterisms.config.limitsGrapple.missColor.description"),
+                    "Miss Color",
+                    "Color that shows on your Grappling HUD when you're not able to grapple.",
                     allowAlpha = false
                 )
             }
 
-            subcategory(translate("winterisms.config.subcategory.flashback")) {
+            subcategory("Flashback") {
                 paragraph(::flashbackReplayForceAllowIncompatibleMods,
-                    translate("winterisms.config.flashbackReplayForceAllowIncompatibleMods"), "${translate<String>("winterisms.config.flashbackReplayForceAllowIncompatibleModsExtremeWarning")} \n${
-                        translate<String>("winterisms.config.flashbackReplayForceAllowIncompatibleModsExtremeWarning2")
-                    }", hidden = !FabricLoader.getInstance().isModLoaded("flashback"))
+                    "Force Allow Incompatible Mods",
+                    "§cWarning: Don't touch this unless you know what you're doing. Flashback disables this for a very good reason. If you do know exactly what you're doing, then enter the following:\n\n§rI understand what I am doing will cause potential instabilities with Flashback. I will not report this to Flashback support. Praise Winter. Praise Moulberry. Praise Ishland.", hidden = !FabricLoader.getInstance().isModLoaded("flashback"))
             }
         }
 
-        category(translate("winterisms.config.category.onboarding")) {
+        category("Onboarding") {
             switch(::incompatibleModsWarningScreenViewed,
-                translate("winterisms.config.incompatibleModsWarningScreenViewed.title"),
-                translate("winterisms.config.incompatibleModsWarningScreenViewed.description")
+                "Problem Mods Screen Viewed?",
+                "If viewed once, will be switched on implying that the screen has been seen. If you want to see it again, switch it off, and then back out of this menu."
             )
         }
 
+
+
         initialize()
+
+
     }
 }

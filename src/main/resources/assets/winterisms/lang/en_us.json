@@ -1,21 +1,4 @@
 {
-  "winterisms.config.category.modifications": "Mod Modifications",
-
-  "winterisms.config.subcategory.limitsGrapple" : "Limits' Grapple",
-  "winterisms.config.limitsGrapple.hitColor.title": "Hit Color",
-  "winterisms.config.limitsGrapple.hitColor.description": "Color that shows on your Grappling HUD when you're able to grapple.",
-  "winterisms.config.limitsGrapple.missColor.title": "Miss Color",
-  "winterisms.config.limitsGrapple.missColor.description": "Color that shows on your Grappling HUD when you're not able to grapple.",
-
-  "winterisms.config.subcategory.flashback": "Flashback",
-  "winterisms.config.flashbackReplayForceAllowIncompatibleMods": "Force Allow Incompatible Mods",
-  "winterisms.config.flashbackReplayForceAllowIncompatibleModsExtremeWarning" : "Warning: Don't touch this unless you know what you're doing. Flashback disables this for a very good reason. If you do know what to do, enter the following:",
-  "winterisms.config.flashbackReplayForceAllowIncompatibleModsExtremeWarning2" : "I understand what I am doing will cause potential instabilities with Flashback. I will not report this to Flashback support. Praise Winter. Praise Moulberry. Praise Ishland.",
-
-  "winterisms.config.category.onboarding": "Onboarding",
-  "winterisms.config.incompatibleModsWarningScreenViewed.title": "Problem Mods Screen Viewed?",
-  "winterisms.config.incompatibleModsWarningScreenViewed.description": "If viewed once, will be switched on implying that the screen has been seen. If you want to see it again, switch it off, and then back out of this menu.",
-
   "winterisms.flashback.incompatibleWithRecordingDescription": "§cYou have mods which are known to cause issues when viewing replays!§r\nIf you know §lexactly§r what you're doing, then go back to the Main Menu screen, Mods, open the Config for Winterisms, and enable the Flashback Force Allow Incompatible Mods in order to be able to view replays.\n\nOtherwise, please close the game, go to Prism Launcher, click edit, mods, and then click the checkbox next to the following mods in order to disable the following mods. You'll be able to view replays after.\n\n",
 
   "winterisms.screen.initialIncompatibleWarningScreen.title": "Winterisms - First Boot - Potential Problem Mods found!",
