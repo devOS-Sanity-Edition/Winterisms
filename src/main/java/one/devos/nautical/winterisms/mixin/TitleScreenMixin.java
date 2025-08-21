@@ -3,8 +3,8 @@ package one.devos.nautical.winterisms.mixin;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.network.chat.Component;
-import one.devos.nautical.winterisms.client.screens.InitialIncompatibleWarningScreen;
 import one.devos.nautical.winterisms.config.Config;
+import one.devos.nautical.winterisms.client.screens.InitialIncompatibleWarningScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -18,7 +18,7 @@ public class TitleScreenMixin extends Screen {
 
     @Inject(at = @At("RETURN"), method = "init")
     private void init(CallbackInfo info) {
-        if (Config.incompatibleModsWarningScreenViewed == false) {
+        if (!Config.INSTANCE.getIncompatibleModsWarningScreenViewed()) {
             this.minecraft.setScreen(new InitialIncompatibleWarningScreen(this));
         }
     }

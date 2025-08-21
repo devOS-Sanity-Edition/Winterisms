@@ -41,7 +41,6 @@ object Winterisms : ModInitializer {
             null
         }
 
-        MidnightConfig.init(MOD_ID, Config::class.java)
         LOGGER.info("[${MOD_NAME}] Winterisms v${FMW.getVersion(MOD_ID)} loaded!")
         LOGGER.info("[${MOD_NAME}] Who let the gay cat furry into the server room? Get them out! Oh wait they have a wrench.")
     }

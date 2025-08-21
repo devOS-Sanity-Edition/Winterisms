@@ -23,6 +23,11 @@ cardinal_components = "6.1.1"
 polymorph = "AGMyBSJE"
 reborn_energy = "4.1.0"
 better_end_island = "1.21.1-Fabric-3.1.2"
+cloth_config = "15.0.140+fabric"
+yungs_api = "1.21.1-Fabric-5.1.6"
+essential_elementa = "710"
+essential_vigilance = "312"
+essential_universalcraft = "427" # the stanley parable number?!
 
 [libraries]
 fabric_api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
@@ -51,10 +56,15 @@ cardinal_components_block = { module = "org.ladysnake.cardinal-components-api:ca
 cardinal_components_entity = { module = "org.ladysnake.cardinal-components-api:cardinal-components-entity", version.ref = "cardinal_components" }
 reborn_energy = { module = "teamreborn:energy", version.ref = "reborn_energy" }
 better_end_island = { module = "maven.modrinth:yungs-better-end-island", version.ref = "better_end_island" }
+cloth_config = { module = "maven.modrinth:cloth-config", version.ref = "cloth_config" }
+yungs_api = { module = "maven.modrinth:yungs-api", version.ref = "yungs_api" }
+essential_elementa = { module = "gg.essential:elementa", version.ref = "essential_elementa" }
+essential_vigilance = { module = "gg.essential:vigilance", version.ref = "essential_vigilance" }
+essential_universalcraft = { module = "gg.essential:universalcraft-1.21-fabric", version.ref = "essential_universalcraft" }
 
 [bundles]
-dev_mods = [ "sodium", "modmenu" ]
-dependencies = [ "midnightlib", "flashback", "trinkets" ]
+dev_mods = [ "sodium" ]
+dependencies = [ "midnightlib", "flashback", "trinkets", "modmenu" ]
 techreborn = [ "techreborn", "reborncore", "reborn_energy" ]
 polymorph = [ "polymorph", "cardinal_components_base", "cardinal_components_block", "cardinal_components_entity" ]
 
