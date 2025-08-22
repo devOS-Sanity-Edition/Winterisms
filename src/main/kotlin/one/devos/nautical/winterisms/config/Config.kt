@@ -18,6 +18,8 @@ object Config : Vigilant(
     var limitsGrappleMissColor: Color = Color(153, 153, 76)
     var flashbackReplayForceAllowIncompatibleMods: String = ""
     var incompatibleModsWarningScreenViewed: Boolean = false
+    var xaerosJourneyFix: Boolean = true
+    var modpackTitle: String = "Winter's Summer"
 
     init {
         // all plans of using internationalization has fallen apart so we have to hard code for now, at least until
@@ -43,17 +45,27 @@ object Config : Vigilant(
             }
         }
 
-        category("Onboarding") {
-            switch(::incompatibleModsWarningScreenViewed,
-                "Problem Mods Screen Viewed?",
-                "If viewed once, will be switched on implying that the screen has been seen. If you want to see it again, switch it off, and then back out of this menu."
-            )
+        category("Fixes") {
+            subcategory("Map Mods") {
+                switch(::xaerosJourneyFix,
+                    "Allow Waypoint Chat Cross-Compat",
+                    "This allows either waypoints to be clickable in chat, as if it was native to said map mod, meaning if you're on Xaero's, you can click JourneyMap Waypoints, and same for the reverse.")
+            }
         }
 
+        category("Winter's Modpacks") {
+            subcategory("Ohboarding") {
+                switch(::incompatibleModsWarningScreenViewed,
+                    "Problem Mods Screen Viewed?",
+                    "If viewed once, will be switched on implying that the screen has been seen. If you want to see it again, switch it off, and then back out of this menu."
+                )
+            }
 
+            subcategory("Pack Settings") {
+                text(::modpackTitle, "Modpack Title", "The name of the Modpack. §cDon't change this value unless you're making a new pack like devOS: Season 7 or something.")
+            }
+        }
 
         initialize()
-
-
     }
 }
