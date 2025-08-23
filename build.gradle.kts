@@ -19,6 +19,7 @@ repositories {
 	maven("https://maven.bawnorton.com/releases") // MixinSquared
 	maven("https://maven.ladysnake.org/releases")
 	maven("https://cursemaven.com") // ech. curseforge.
+    maven("https://repo.essential.gg/repository/maven-public") // Essential's Vigilance Config
 }
 
 //All dependencies and their versions are in ./gradle/libs.versions.toml
@@ -41,7 +42,8 @@ dependencies {
 	modLocalRuntime(libs.bundles.dev.mods)
 
 	// Config
-	include(modImplementation(libs.midnightlib.get())!!)
+	include(implementation(libs.essential.vigilance.get())!!)
+	include(modImplementation(libs.essential.universalcraft.get())!!)
 
 //	modImplementation(files("localLibs/centered-crosshair+1.21-1.0.8.jar"))
 
@@ -54,6 +56,8 @@ dependencies {
 	modCompileOnly(libs.xaeros.minimap)
 	modImplementation(libs.journeymap)
 	modImplementation(libs.multikeybindings)
+//    modImplementation(libs.yungs.api) // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    modImplementation(libs.cloth.config)
 	modImplementation(libs.better.end.island)
 
 	modCompileOnly(libs.enderscape)

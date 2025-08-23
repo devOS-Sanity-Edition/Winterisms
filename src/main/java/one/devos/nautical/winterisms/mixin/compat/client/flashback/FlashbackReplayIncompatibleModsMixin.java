@@ -21,7 +21,7 @@ public class FlashbackReplayIncompatibleModsMixin {
             remap = false
     )
     private static List<String> getReplayIncompatibleMods(List<String> original) {
-        if (Objects.equals(Config.flashbackReplayForceAllowIncompatibleMods, Config.painAndSufferingAndSufferingAndPain)) {
+        if (Objects.equals(Config.INSTANCE.getFlashbackReplayForceAllowIncompatibleMods(), Config.INSTANCE.getPainAndSufferingAndSufferingAndPain())) {
             original.clear();
         }
 

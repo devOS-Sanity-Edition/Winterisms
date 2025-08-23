@@ -6,9 +6,11 @@ import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType
 import net.fabricmc.loader.api.FabricLoader
+import net.minecraft.client.Minecraft
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
 import one.devos.nautical.winterisms.Winterisms
+import one.devos.nautical.winterisms.config.Config
 import techreborn.client.gui.GuiElectricFurnace
 
 object WinterismsClient : ClientModInitializer {
@@ -27,5 +29,7 @@ object WinterismsClient : ClientModInitializer {
 
             null
         }
+
+        Minecraft.getInstance().execute { Minecraft.getInstance().window.setTitle(Config.modpackTitle) }
     }
 }

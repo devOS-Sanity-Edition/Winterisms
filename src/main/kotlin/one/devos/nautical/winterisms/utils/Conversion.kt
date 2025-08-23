@@ -1,5 +1,7 @@
 package one.devos.nautical.winterisms.utils
 
+import net.minecraft.client.resources.language.I18n
+import net.minecraft.network.chat.Component
 import org.apache.commons.lang3.StringUtils
 
 fun convertHexStringAsAnInt(hexString: String): Int {
@@ -54,4 +56,14 @@ fun convertJourneyMapToXaeros(text: String): String {
         name = "$x,$z"
 
     return "xaero-waypoint:$name:W:$x:$y:$z:16:false:0:Internal-dim%${dim.replace(":", "$")}-waypoints"
+}
+
+// im fuckin *lazy*
+// thanks Deftu for writing this generic for me when i asked about generics lol
+inline fun <reified T> translate(key: String): T {
+    return when (T::class) {
+        String::class -> Component.translatable(key).string
+        Component::class -> Component.translatable(key)
+        else -> throw IllegalArgumentException("Unsupported type: ${T::class.simpleName}. Use String or Component.")
+    } as T
 }
