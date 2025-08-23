@@ -20,6 +20,7 @@ repositories {
 	maven("https://maven.ladysnake.org/releases")
 	maven("https://cursemaven.com") // ech. curseforge.
     maven("https://repo.essential.gg/repository/maven-public") // Essential's Vigilance Config
+    maven("https://jitpack.io")
 }
 
 //All dependencies and their versions are in ./gradle/libs.versions.toml
@@ -50,6 +51,7 @@ dependencies {
 	include(modImplementation(libs.fmw.get())!!) // just to avoid the basic long metadata calls
 	include(implementation(annotationProcessor(libs.mixinsquared.get())!!)!!)
 	include(implementation(libs.mixinconstraints.get())!!)
+    include(implementation(libs.brigadier.kotlin.get())!!)
 
 	modImplementation(libs.grappling.hook)
 	modImplementation(libs.lattice)

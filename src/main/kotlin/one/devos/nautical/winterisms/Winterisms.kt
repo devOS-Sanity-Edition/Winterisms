@@ -3,11 +3,14 @@ package one.devos.nautical.winterisms
 import com.illusivesoulworks.polymorph.api.PolymorphApi
 import gay.asoji.fmw.FMW
 import net.fabricmc.api.ModInitializer
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
+import one.devos.nautical.winterisms.commands.requestCommand
+import one.devos.nautical.winterisms.commands.restartCommand
 import one.devos.nautical.winterisms.compat.polymorph.techreborn.TRElectricFurnaceDataComponent
 import one.devos.nautical.winterisms.config.oldToNewConfigConversation
 import org.slf4j.Logger
@@ -41,6 +44,11 @@ object Winterisms : ModInitializer {
             }
 
             null
+        }
+
+        CommandRegistrationCallback.EVENT.register { dispatcher, registryAccess, environment ->
+            requestCommand(dispatcher)
+            restartCommand(dispatcher)
         }
 
         LOGGER.info("[${MOD_NAME}] Winterisms v${FMW.getVersion(MOD_ID)} loaded!")
