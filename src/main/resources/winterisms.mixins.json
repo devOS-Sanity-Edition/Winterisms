@@ -8,6 +8,7 @@
   },
   "mixins": [
     "CrashReportGAIDeterrentMixin",
+    "CrashReportMCLogsMixin",
     "EndDragonFightMixin",
     "compat.enderscape.MinecraftServerMixin",
     "compat.journeymap.WaypointParserMixin",

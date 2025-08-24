@@ -21,7 +21,7 @@ Some fixes done for the Winter's modpacks.
 - Cartrigger for idea of Raccoon trinket slot and the 2 raccoon slot textures
 - CephalonCosmic for internal tool to figure out which NBT files have certain values
 - IThundxr for 
-- maximumpower55 for helping with the pack
+- Maximumpower55 for helping with the pack, and the mclo.gs crash handling from TeaBridge
 - Oliver-makes-code for showing how to setup datapacks as a resource pack for actual working Structure NBT overriding
 - ims212 for end dragon fight mixin
 
