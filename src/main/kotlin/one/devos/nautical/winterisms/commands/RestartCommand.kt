@@ -6,7 +6,6 @@ import de.phyrone.brig.wrapper.literal
 import de.phyrone.brig.wrapper.runs
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents
 import net.minecraft.ChatFormatting
-import net.minecraft.commands.CommandSource
 import net.minecraft.commands.CommandSourceStack
 import net.minecraft.network.chat.Component
 

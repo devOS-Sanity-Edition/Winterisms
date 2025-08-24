@@ -56,6 +56,8 @@ dependencies {
     include(implementation("me.saharnooby:qoi-java:1.2.1")!!) // fine. have it your way, because even tho i correctly defined you in the libs.versions.toml, i cant .get() you for some fuckwad reason.
     include(implementation(libs.qoi.awt.get())!!) // OH BUT THIS ONE I CAN HUUUUUUUH FUCK YOU FUCK YOU CUNT
     include(implementation(libs.brotli.get())!!)
+    include(implementation("net.java.dev.jna:jna:5.17.0")!!) // not you tooo.. ugh
+    include(implementation(libs.jna.platform.get())!!)
 
 	modImplementation(libs.grappling.hook)
 	modImplementation(libs.lattice)

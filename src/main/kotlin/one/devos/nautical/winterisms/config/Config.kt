@@ -5,7 +5,6 @@ import gg.essential.vigilance.Vigilant
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.Util
 import one.devos.nautical.winterisms.Winterisms
-import one.devos.nautical.winterisms.utils.UnsupIni
 import java.awt.Color
 import java.io.File
 
@@ -25,6 +24,7 @@ object Config : Vigilant(
     var gAIDeterrent: Boolean = true
     var uploadCrashToMCLogs: Boolean = true
     var openBrowserOnGameCrash: Boolean = true
+    var windows11DarkModeTitlebar: Boolean = false
 
     init {
         // all plans of using internationalization has fallen apart so we have to hard code for now, at least until
@@ -87,6 +87,13 @@ object Config : Vigilant(
                 switch(::openBrowserOnGameCrash,
                     "Open Browser on Crash",
                     "On game crash, and §6Upload crash to mclogs§r is enabled, the player's browser will open to the log link."
+                )
+            }
+
+            subcategory("Windows 11") {
+                switch(::windows11DarkModeTitlebar,
+                    "Dark Mode Titlebar",
+                    "Makes your game's titlebar dark instead of light. Winter's testing shows this option applying is.. finicky.. so if it doesn't work uh..\n\n§6Only works on Windows 11. Requires game restart."
                 )
             }
         }

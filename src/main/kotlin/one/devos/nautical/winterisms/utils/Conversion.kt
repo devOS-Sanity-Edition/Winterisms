@@ -1,14 +1,12 @@
 package one.devos.nautical.winterisms.utils
 
 import me.saharnooby.qoi.QOIDecoder
-import me.saharnooby.qoi.QOIImage
 import me.saharnooby.qoi.QOIUtil
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.network.chat.Component
 import one.devos.nautical.winterisms.Winterisms
 import org.apache.commons.lang3.StringUtils
 import org.brotli.dec.BrotliInputStream
-import java.io.ByteArrayInputStream
 import java.io.File
 import java.io.InputStream
 import kotlin.io.encoding.Base64

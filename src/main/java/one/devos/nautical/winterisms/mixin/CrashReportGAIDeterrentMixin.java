@@ -19,7 +19,6 @@ package one.devos.nautical.winterisms.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.CrashReport;
-import one.devos.nautical.winterisms.config.Config;
 import one.devos.nautical.winterisms.crash.CrashHandler;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;

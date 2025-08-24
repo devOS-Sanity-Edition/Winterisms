@@ -12,9 +12,6 @@ import net.minecraft.resources.ResourceLocation
 import one.devos.nautical.winterisms.Winterisms
 import one.devos.nautical.winterisms.config.Config
 import one.devos.nautical.winterisms.utils.UnsupIni
-import one.devos.nautical.winterisms.utils.altogetherNowTestFromBase64StringToFinalQOIImage
-import one.devos.nautical.winterisms.utils.base64ToBrotliInputStream
-import one.devos.nautical.winterisms.utils.brotliToByteArray
 import techreborn.client.gui.GuiElectricFurnace
 
 object WinterismsClient : ClientModInitializer {

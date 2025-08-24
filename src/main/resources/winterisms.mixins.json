@@ -20,6 +20,7 @@
     "KeyBindsScreenMixin",
     "KeyMappingAccessor",
     "TitleScreenMixin",
+    "WindowMixin",
     "compat.client.flashback.FlashbackReplayIncompatibleModsMixin",
     "compat.client.flashback.FlashbackReplayIncompatibleModsTitleScreenMixin",
     "compat.client.limits_grapple.LimitsGrappleInGameHudColorMixin",
