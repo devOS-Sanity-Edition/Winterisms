@@ -56,5 +56,4 @@ fun restartCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
             }
         }
     }
-
 }
