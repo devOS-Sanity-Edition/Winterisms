@@ -52,6 +52,7 @@ dependencies {
 	include(implementation(annotationProcessor(libs.mixinsquared.get())!!)!!)
 	include(implementation(libs.mixinconstraints.get())!!)
     include(implementation(libs.brigadier.kotlin.get())!!)
+    include(implementation(libs.ini4j.get())!!)
 
 	modImplementation(libs.grappling.hook)
 	modImplementation(libs.lattice)

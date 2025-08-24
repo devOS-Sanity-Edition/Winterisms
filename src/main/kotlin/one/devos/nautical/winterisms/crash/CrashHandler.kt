@@ -1,14 +1,11 @@
 package one.devos.nautical.winterisms.crash
 
 import com.google.gson.JsonParser
-import com.google.gson.stream.JsonReader
 import net.minecraft.CrashReport
 import net.minecraft.ReportType
 import net.minecraft.Util
 import one.devos.nautical.winterisms.Winterisms
 import one.devos.nautical.winterisms.config.Config
-import java.awt.Desktop
-import java.lang.StringBuilder
 import java.net.URI
 import java.net.URLEncoder
 import java.net.http.HttpClient

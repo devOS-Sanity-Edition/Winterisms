@@ -4,7 +4,6 @@ import gay.asoji.fmw.FMW
 import gg.essential.vigilance.Vigilant
 import net.fabricmc.loader.api.FabricLoader
 import one.devos.nautical.winterisms.Winterisms
-import one.devos.nautical.winterisms.utils.translate
 import java.awt.Color
 import java.io.File
 
@@ -20,6 +19,7 @@ object Config : Vigilant(
     var incompatibleModsWarningScreenViewed: Boolean = false
     var xaerosJourneyFix: Boolean = true
     var modpackTitle: String = "Winter's Summer"
+    var modpackQOIData: String = ""
     var gAIDeterrent: Boolean = true
     var uploadCrashToMCLogs: Boolean = true
     var openBrowserOnGameCrash: Boolean = true
@@ -67,9 +67,15 @@ object Config : Vigilant(
             }
 
             subcategory("Pack Settings") {
+
                 text(::modpackTitle,
                     "Modpack Title",
-                    "The name of the Modpack. Don't change this value unless you're making a new pack like devOS: Season 7 or something."
+                    "The name of the Modpack. Used for Window title and a few other things. Recommended to not change it unless you're making a brand new modpack, like devOS: Season 7 or something.\n\n§6Requires game restart."
+                )
+
+                paragraph(::modpackQOIData,
+                    "Modpack QOI Data String",
+                    "The Base64, Brotli-compressed QOI Data string for the server icon, used by Unsup by default.\n\n§6Requires game restart."
                 )
 
                 switch(::gAIDeterrent,
@@ -84,11 +90,12 @@ object Config : Vigilant(
 
                 switch(::openBrowserOnGameCrash,
                     "Open Browser on Crash",
-                    "On game crash, and §6Upload crash to mclogs§r is enabled, the player's browser will open to the log link.")
+                    "On game crash, and §6Upload crash to mclogs§r is enabled, the player's browser will open to the log link."
+                )
             }
         }
 
-        setSubcategoryDescription("Winter's Modpacks", "Pack Settings", "§cWarning: §rPlease do not touch any of these settings. They're here as easy exposure for modpack creators, but unless you know what you're doing or have a good reason to change them, please do not change any of these settings.")
+        setSubcategoryDescription("Winter's Modpacks", "Pack Settings", "§cWarning: §rPlease do not touch any of these settings. They're here as easy exposure for modpack creators, but unless you know what you're doing or have a good reason to change them, please do not change any of these settings.\n\n§6If an unsup.ini exists in your pack's game directory, that will override whatever you put here. Modify the unsup.ini, or don't have one if you want to change the pack title and/or icon.")
 
         initialize()
     }

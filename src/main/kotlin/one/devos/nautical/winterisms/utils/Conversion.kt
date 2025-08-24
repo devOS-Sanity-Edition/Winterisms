@@ -1,6 +1,5 @@
 package one.devos.nautical.winterisms.utils
 
-import net.minecraft.client.resources.language.I18n
 import net.minecraft.network.chat.Component
 import org.apache.commons.lang3.StringUtils
 

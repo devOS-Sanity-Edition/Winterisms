@@ -15,6 +15,14 @@ import techreborn.client.gui.GuiElectricFurnace
 
 object WinterismsClient : ClientModInitializer {
     override fun onInitializeClient() {
+        if (UnsupIniReader.unsupIniFile.exists()) {
+            Config.modpackTitle = UnsupIniReader.brandingTitle
+            Config.modpackQOIData = UnsupIniReader.brandingQOI
+        }
+
+        Winterisms.LOGGER.info(Config.modpackTitle)
+        Winterisms.LOGGER.info(Config.modpackQOIData)
+
         ResourceManagerHelper.registerBuiltinResourcePack(
             ResourceLocation.fromNamespaceAndPath(Winterisms.MOD_ID, "othertexture"),
             FabricLoader.getInstance().getModContainer(Winterisms.MOD_ID).get(),
