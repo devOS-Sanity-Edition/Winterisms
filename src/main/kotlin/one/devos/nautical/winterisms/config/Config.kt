@@ -3,7 +3,9 @@ package one.devos.nautical.winterisms.config
 import gay.asoji.fmw.FMW
 import gg.essential.vigilance.Vigilant
 import net.fabricmc.loader.api.FabricLoader
+import net.minecraft.Util
 import one.devos.nautical.winterisms.Winterisms
+import one.devos.nautical.winterisms.utils.UnsupIni
 import java.awt.Color
 import java.io.File
 
@@ -27,6 +29,27 @@ object Config : Vigilant(
     init {
         // all plans of using internationalization has fallen apart so we have to hard code for now, at least until
         // there's a way you can custom define in the config what a key is, so forgive me for hardcoding this mfer
+        category("--- Howdy ---") {
+            subcategory("Want to contribute?") {
+                button("GitHub", "Where the source code is!", "GitHub Page") {
+                    Util.getPlatform().openUri("https://github.com/devOS-Sanity-Edition/Winterisms")
+                }
+
+                button("Report an Issue", "Found a bug with Winterisms? Or you want to suggest something? Go file an issue, the button will take you to the issue tracker.", "Issues Page") {
+                    Util.getPlatform().openUri("https://github.com/devOS-Sanity-Edition/Winterisms/issues")
+                }
+            }
+        }
+
+        category("Fixes") {
+            subcategory("Map Mods") {
+                switch(::xaerosJourneyFix,
+                    "Allow Waypoint Chat Cross-Compat",
+                    "This allows either waypoints to be clickable in chat, as if it was native to said map mod, meaning if you're on Xaero's, you can click JourneyMap Waypoints, and same for the reverse."
+                )
+            }
+        }
+
         category("Modifications") {
             subcategory("Limits' Grapple") {
                 color(::limitsGrappleHitColor,
@@ -49,11 +72,21 @@ object Config : Vigilant(
             }
         }
 
-        category("Fixes") {
-            subcategory("Map Mods") {
-                switch(::xaerosJourneyFix,
-                    "Allow Waypoint Chat Cross-Compat",
-                    "This allows either waypoints to be clickable in chat, as if it was native to said map mod, meaning if you're on Xaero's, you can click JourneyMap Waypoints, and same for the reverse."
+        category("User") {
+            subcategory("Crashing") {
+                switch(::gAIDeterrent,
+                    "Generative AI Deterrent in Crash Logs",
+                    "Injects in Crash Logs a prompt that tells Generative AI providers to not have game crash logs read by Generative AI, and to go report to Mod Developers instead."
+                )
+
+                switch(::uploadCrashToMCLogs,
+                    "Upload crash to mclogs service",
+                    "Uploads game crash to mclo.gs service, while preserving your privacy and redacting all private information. Useful if pack crashes quite a bit and need to get logs to a developer."
+                )
+
+                switch(::openBrowserOnGameCrash,
+                    "Open Browser on Crash",
+                    "On game crash, and §6Upload crash to mclogs§r is enabled, the player's browser will open to the log link."
                 )
             }
         }
@@ -74,28 +107,14 @@ object Config : Vigilant(
                 )
 
                 paragraph(::modpackQOIBase64Data,
-                    "Modpack QOI Data String",
-                    "The Brotli-compressed QOI Base64 Data string for the server icon, used by Unsup by default.\n\n§6Requires game restart."
-                )
-
-                switch(::gAIDeterrent,
-                    "Generative AI Deterrent in Crash Logs",
-                    "Injects in Crash Logs a prompt that tells Generative AI providers to not have game crash logs read by Generative AI, and to go report to Mod Developers instead."
-                )
-
-                switch(::uploadCrashToMCLogs,
-                    "Upload crash to mclogs service",
-                    "Uploads game crash to mclo.gs service, while preserving your privacy and redacting all private information. Useful if pack crashes quite a bit and need to get logs to a developer."
-                )
-
-                switch(::openBrowserOnGameCrash,
-                    "Open Browser on Crash",
-                    "On game crash, and §6Upload crash to mclogs§r is enabled, the player's browser will open to the log link."
+                    "Modpack Icon as QOI Data String",
+                    "The Brotli-compressed QOI Base64 Data string for the pack icon, used by Unsup by default.\n\nQOI Data can be generated at https://qoi.y2k.diy/, just make sure it's compressed with Brotli, and encoded to Base64.\n\n§6Requires game restart."
                 )
             }
         }
 
-        setSubcategoryDescription("Winter's Modpacks", "Pack Settings", "§cWarning: §rPlease do not touch any of these settings. They're here as easy exposure for modpack creators, but unless you know what you're doing or have a good reason to change them, please do not change any of these settings.\n\n§6If an unsup.ini exists in your pack's game directory, that will override whatever you put here. Modify the unsup.ini, or don't have one if you want to change the pack title and/or icon.")
+        setCategoryDescription("--- Howdy ---", "§6Howdy! Welcome to Winterisms v3.§r\n\nA lot of time and effort has been put to try to make this release better, with a few more options and tweaks compared to other versions. That being said, feel free to look around the options and adjust to your liking.\n")
+        setSubcategoryDescription("Winter's Modpacks", "Pack Settings", "§cWarning: §rPlease do not touch any of these settings. They're here as easy exposure for modpack creators, but unless you know what you're doing or have a good reason to change them, please do not change any of these settings.\n\n§6If an unsup.ini exists in your pack's game directory, that will override whatever you put here. Modify the unsup.ini, or don't have one if you want to change the pack title and/or icon. Whatever changes you make to this subcategory §c§lwill not§r§6 apply if an unsup.ini is present, otherwise, just restart your game.")
 
         initialize()
     }
