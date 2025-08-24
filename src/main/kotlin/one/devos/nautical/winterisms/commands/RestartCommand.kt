@@ -58,7 +58,7 @@ fun restartCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
         if (message != null) {
             lastSource?.sendSuccess({ message }, true)
         }
-        
+
         if (ticks >= 0) {
             return@register
         }
