@@ -28,6 +28,7 @@ yungs_api = "1.21.1-Fabric-5.1.6"
 essential_elementa = "710"
 essential_vigilance = "312"
 essential_universalcraft = "427" # the stanley parable number?!
+brigadier_kotlin = "1.4.2"
 
 [libraries]
 fabric_api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
@@ -61,6 +62,7 @@ yungs_api = { module = "maven.modrinth:yungs-api", version.ref = "yungs_api" }
 essential_elementa = { module = "gg.essential:elementa", version.ref = "essential_elementa" }
 essential_vigilance = { module = "gg.essential:vigilance", version.ref = "essential_vigilance" }
 essential_universalcraft = { module = "gg.essential:universalcraft-1.21-fabric", version.ref = "essential_universalcraft" }
+brigadier_kotlin = { module = "com.github.Phyrone:brigardier-kotlin", version.ref = "brigadier_kotlin" }
 
 [bundles]
 dev_mods = [ "sodium" ]

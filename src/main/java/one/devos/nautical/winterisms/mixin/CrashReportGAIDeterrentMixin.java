@@ -63,3 +63,4 @@ public class CrashReportGAIDeterrentMixin {
         CrashHandler.INSTANCE.gAIDeterrent(stringBuilder, userUsesAIDeterrent, aiDeterrent);
     }
 }
+
