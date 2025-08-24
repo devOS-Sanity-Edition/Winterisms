@@ -24,7 +24,7 @@ object Config : Vigilant(
     var gAIDeterrent: Boolean = true
     var uploadCrashToMCLogs: Boolean = true
     var openBrowserOnGameCrash: Boolean = true
-    var windows11DarkModeTitlebar: Boolean = false
+    var windows11DarkModeTitlebar: Boolean = true
 
     init {
         // all plans of using internationalization has fallen apart so we have to hard code for now, at least until
