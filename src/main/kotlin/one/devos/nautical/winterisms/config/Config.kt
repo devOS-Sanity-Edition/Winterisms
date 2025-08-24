@@ -19,7 +19,7 @@ object Config : Vigilant(
     var incompatibleModsWarningScreenViewed: Boolean = false
     var xaerosJourneyFix: Boolean = true
     var modpackTitle: String = "Winter's Summer"
-    var modpackQOIData: String = ""
+    var modpackQOIBase64Data: String = ""
     var gAIDeterrent: Boolean = true
     var uploadCrashToMCLogs: Boolean = true
     var openBrowserOnGameCrash: Boolean = true
@@ -73,9 +73,9 @@ object Config : Vigilant(
                     "The name of the Modpack. Used for Window title and a few other things. Recommended to not change it unless you're making a brand new modpack, like devOS: Season 7 or something.\n\n§6Requires game restart."
                 )
 
-                paragraph(::modpackQOIData,
+                paragraph(::modpackQOIBase64Data,
                     "Modpack QOI Data String",
-                    "The Base64, Brotli-compressed QOI Data string for the server icon, used by Unsup by default.\n\n§6Requires game restart."
+                    "The Brotli-compressed QOI Base64 Data string for the server icon, used by Unsup by default.\n\n§6Requires game restart."
                 )
 
                 switch(::gAIDeterrent,

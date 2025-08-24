@@ -53,6 +53,9 @@ dependencies {
 	include(implementation(libs.mixinconstraints.get())!!)
     include(implementation(libs.brigadier.kotlin.get())!!)
     include(implementation(libs.ini4j.get())!!)
+    include(implementation("me.saharnooby:qoi-java:1.2.1")!!) // fine. have it your way, because even tho i correctly defined you in the libs.versions.toml, i cant .get() you for some fuckwad reason.
+    include(implementation(libs.qoi.awt.get())!!) // OH BUT THIS ONE I CAN HUUUUUUUH FUCK YOU FUCK YOU CUNT
+    include(implementation(libs.brotli.get())!!)
 
 	modImplementation(libs.grappling.hook)
 	modImplementation(libs.lattice)

@@ -11,17 +11,24 @@ import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
 import one.devos.nautical.winterisms.Winterisms
 import one.devos.nautical.winterisms.config.Config
+import one.devos.nautical.winterisms.utils.UnsupIniReader
+import one.devos.nautical.winterisms.utils.altogetherNowTestFromBase64StringToFinalQOIImage
+import one.devos.nautical.winterisms.utils.base64ToBrotliInputStream
+import one.devos.nautical.winterisms.utils.brotliToByteArray
 import techreborn.client.gui.GuiElectricFurnace
 
 object WinterismsClient : ClientModInitializer {
     override fun onInitializeClient() {
         if (UnsupIniReader.unsupIniFile.exists()) {
             Config.modpackTitle = UnsupIniReader.brandingTitle
-            Config.modpackQOIData = UnsupIniReader.brandingQOI
+            Config.modpackQOIBase64Data = UnsupIniReader.brandingQOIBase64String
         }
 
         Winterisms.LOGGER.info(Config.modpackTitle)
-        Winterisms.LOGGER.info(Config.modpackQOIData)
+        Winterisms.LOGGER.info(Config.modpackQOIBase64Data)
+        Winterisms.LOGGER.info(brotliToByteArray(base64ToBrotliInputStream(Config.modpackQOIBase64Data)).toHexString())
+
+        altogetherNowTestFromBase64StringToFinalQOIImage(Config.modpackQOIBase64Data)
 
         ResourceManagerHelper.registerBuiltinResourcePack(
             ResourceLocation.fromNamespaceAndPath(Winterisms.MOD_ID, "othertexture"),

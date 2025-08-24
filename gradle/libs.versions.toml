@@ -30,6 +30,8 @@ essential_vigilance = "312"
 essential_universalcraft = "427" # the stanley parable number?!
 brigadier_kotlin = "1.4.2"
 ini4j = "0.5.4"
+brotli = "0.1.2"
+qoi = "1.2.1"
 
 [libraries]
 fabric_api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
@@ -65,6 +67,9 @@ essential_vigilance = { module = "gg.essential:vigilance", version.ref = "essent
 essential_universalcraft = { module = "gg.essential:universalcraft-1.21-fabric", version.ref = "essential_universalcraft" }
 brigadier_kotlin = { module = "com.github.Phyrone:brigardier-kotlin", version.ref = "brigadier_kotlin" }
 ini4j = { module = "org.ini4j:ini4j", version.ref = "ini4j" }
+brotli = { module = "org.brotli:dec", version.ref = "brotli" }
+qoi = { module = "me.saharnooby:qoi-java", version.ref = "qoi" }
+qoi_awt = { module = "me.saharnooby:qoi-java-awt", version.ref = "qoi" }
 
 [bundles]
 dev_mods = [ "sodium" ]
