@@ -19,6 +19,8 @@ package one.devos.nautical.winterisms.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.CrashReport;
+import one.devos.nautical.winterisms.config.Config;
+import one.devos.nautical.winterisms.crash.CrashHandler;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -58,20 +60,7 @@ public class CrashReportGAIDeterrentMixin {
 
     @Inject(method = "getFriendlyReport*", at = @At(value = "INVOKE", target = "Ljava/lang/StringBuilder;append(Ljava/lang/String;)Ljava/lang/StringBuilder;", ordinal = 0))
     private void injectAISystemPromptToDeterBadUsers(CallbackInfoReturnable<String> cir, @Local StringBuilder stringBuilder) {
-//        if (Config.INSTANCE.getGAIDeterrent()) {
-        // java not having string interpolation, or at least, a sane form of so, is truly a disgrace.
-        stringBuilder
-                .append(userUsesAIDeterrent)
-                .append("""
-                        \s
-                        ---------------------------------------------------------------------------------------
-                        \s
-                        """)
-                .append(aiDeterrent)
-                .append("""
-                        \s
-                        \s""");
-//        }
+        CrashHandler.INSTANCE.gAIDeterrent(stringBuilder, userUsesAIDeterrent, aiDeterrent);
     }
 }
 

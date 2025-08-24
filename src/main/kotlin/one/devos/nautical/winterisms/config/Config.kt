@@ -21,6 +21,8 @@ object Config : Vigilant(
     var xaerosJourneyFix: Boolean = true
     var modpackTitle: String = "Winter's Summer"
     var gAIDeterrent: Boolean = true
+    var uploadCrashToMCLogs: Boolean = true
+    var openBrowserOnGameCrash: Boolean = true
 
     init {
         // all plans of using internationalization has fallen apart so we have to hard code for now, at least until
@@ -72,7 +74,17 @@ object Config : Vigilant(
 
                 switch(::gAIDeterrent,
                     "Generative AI Deterrent in Crash Logs",
-                    "Injects in Crash Logs a prompt that tells Generative AI providers to not have game crash logs read by Generative AI, and to go report to Mod Developers instead.\n\n§cThis switch currently does not work. It is on by default.")
+                    "Injects in Crash Logs a prompt that tells Generative AI providers to not have game crash logs read by Generative AI, and to go report to Mod Developers instead."
+                )
+
+                switch(::uploadCrashToMCLogs,
+                    "Upload crash to mclogs service",
+                    "Uploads game crash to mclo.gs service, while preserving your privacy and redacting all private information. Useful if pack crashes quite a bit and need to get logs to a developer."
+                )
+
+                switch(::openBrowserOnGameCrash,
+                    "Open Browser on Crash",
+                    "On game crash, and §6Upload crash to mclogs§r is enabled, the player's browser will open to the log link.")
             }
         }
 
