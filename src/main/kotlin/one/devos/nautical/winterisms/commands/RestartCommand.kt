@@ -52,10 +52,13 @@ fun restartCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
             3 * 20 -> 3.rebooting()
             2 * 20 -> 2.rebooting()
             1 * 20 -> 1.rebooting()
-            else -> {}
+            else -> null
         }
 
-        lastSource?.sendSuccess({ message }, true)
+        if (message != null) {
+            lastSource?.sendSuccess({ message }, true)
+        }
+        
         if (ticks >= 0) {
             return@register
         }
