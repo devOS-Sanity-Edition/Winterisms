@@ -7,7 +7,7 @@
     "defaultRequire": 1
   },
   "mixins": [
-    "common.CrashReportGAIDeterrentMixin",
+    "common.CrashReportGenerativeAIDeterrentMixin",
     "common.CrashReportMCLogsMixin",
     "common.EndDragonFightMixin",
     "common.compat.enderscape.MinecraftServerMixin",

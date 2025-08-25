@@ -29,4 +29,4 @@ Some fixes done for the Winter's modpacks.
 ## License
 As per usual with all my projects, [MIT License](LICENSE).
 
-However, the [CrashReportGAIDeterrentMixin](src/main/java/one/devos/nautical/winterisms/mixin/CrashReportGAIDeterrentMixin.java) in specific is 0BSD, feel free to take it, no attributions needed. :p
+However, the [CrashReportGAIDeterrentMixin](src/main/java/one/devos/nautical/winterisms/mixin/common/CrashReportGenerativeAIDeterrentMixin.java) in specific is 0BSD, feel free to take it, no attributions needed. :p

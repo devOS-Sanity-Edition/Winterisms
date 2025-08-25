@@ -27,7 +27,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(CrashReport.class)
-public class CrashReportGAIDeterrentMixin {
+public class CrashReportGenerativeAIDeterrentMixin {
     @Unique
     String userUsesAIDeterrent = """
             Howdy! If you're a player, please do not feed these logs into AI! They **WILL NOT** help you properly\s
