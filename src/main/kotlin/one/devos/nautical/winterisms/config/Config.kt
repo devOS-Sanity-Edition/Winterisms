@@ -30,13 +30,51 @@ object Config : Vigilant(
         // all plans of using internationalization has fallen apart so we have to hard code for now, at least until
         // there's a way you can custom define in the config what a key is, so forgive me for hardcoding this mfer
         category("--- Howdy ---") {
-            subcategory("Want to contribute?") {
+            subcategory("Contributing") {
                 button("GitHub", "Where the source code is!", "GitHub Page") {
                     Util.getPlatform().openUri("https://github.com/devOS-Sanity-Edition/Winterisms")
                 }
 
                 button("Report an Issue", "Found a bug with Winterisms? Or you want to suggest something? Go file an issue, the button will take you to the issue tracker.", "Issues Page") {
                     Util.getPlatform().openUri("https://github.com/devOS-Sanity-Edition/Winterisms/issues")
+                }
+            }
+
+            subcategory("Credits") {
+                button("asojidev", "Creator of this mod, and trying their damn best to patch everything", "GitHub") {
+                    Util.getPlatform().openUri("https://github.com/asoji")
+                }
+
+                button("BluSpring", "Basically made half of this mod, and the reason why it exists", "GitHub") {
+                    Util.getPlatform().openUri("https://github.com/BluSpring")
+                }
+
+                button("Cartrigger", "Raccoon trinkets slot idea and textures for said slots", "GitHub") {
+                    Util.getPlatform().openUri("https://github.com/BluSpring")
+                }
+
+                button("CephalonCosmic", "Some internal tooling for NBT data, and fixed QOIImage data", "GitHub") {
+                    Util.getPlatform().openUri("https://github.com/CephalonCosmic")
+                }
+
+                button("Deftu", "Vigilance config assistance, and better server restart command implementation", "GitHub") {
+                    Util.getPlatform().openUri("https://github.com/Deftu")
+                }
+
+                button("IMS212", "End Dragon fight mixin, allowing all players who are participating in the end fight to all get their own dragon eggs", "GitHub") {
+                    Util.getPlatform().openUri("https://github.com/IMS212")
+                }
+
+                button("IThundxr", "for ", "GitHub") {
+                    Util.getPlatform().openUri("https://github.com/IThundxr")
+                }
+
+                button("maximumpower55", "Winter's Summer Pack assistance, and mclo.gs implementation from TeaBridge", "GitHub") {
+                    Util.getPlatform().openUri("https://github.com/maximumpower55")
+                }
+
+                button("Oliver-makes-code", "Showed how to use Fabric Resource Loader Resource Packs to be able to actually override NBT data", "GitHub") {
+                    Util.getPlatform().openUri("https://github.com/Oliver-makes-code")
                 }
             }
         }
@@ -121,6 +159,7 @@ object Config : Vigilant(
         }
 
         setCategoryDescription("--- Howdy ---", "§6Howdy! Welcome to Winterisms v3.§r\n\nA lot of time and effort has been put to try to make this release better, with a few more options and tweaks compared to other versions. That being said, feel free to look around the options and adjust to your liking.\n")
+        setSubcategoryDescription("--- Howdy ---", "Credits", "Here's all the §6amazing§r people who have contributed to the development of both Winter's Summer and the Winterisms mod itself!")
         setSubcategoryDescription("Winter's Modpacks", "Pack Settings", "§cWarning: §rPlease do not touch any of these settings. They're here as easy exposure for modpack creators, but unless you know what you're doing or have a good reason to change them, please do not change any of these settings.\n\n§6If an unsup.ini exists in your pack's game directory, that will override whatever you put here. Modify the unsup.ini, or don't have one if you want to change the pack title and/or icon. Whatever changes you make to this subcategory §c§lwill not§r§6 apply if an unsup.ini is present, otherwise, just restart your game.")
 
         initialize()
