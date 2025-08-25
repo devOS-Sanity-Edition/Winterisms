@@ -1,8 +1,7 @@
-package one.devos.nautical.winterisms.mixin;
+package one.devos.nautical.winterisms.mixin.client;
 
 import net.minecraft.client.Minecraft;
 import one.devos.nautical.winterisms.client.titlebar.DarkModeTitleBar;
-import one.devos.nautical.winterisms.client.titlebar.QOIWindowIcon;
 import org.lwjgl.glfw.GLFWNativeWin32;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

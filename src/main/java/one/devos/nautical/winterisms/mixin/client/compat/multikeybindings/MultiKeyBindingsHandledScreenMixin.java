@@ -1,4 +1,4 @@
-package one.devos.nautical.winterisms.mixin.compat.client.multikeybindings;
+package one.devos.nautical.winterisms.mixin.client.compat.multikeybindings;
 
 import com.bawnorton.mixinsquared.TargetHandler;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;

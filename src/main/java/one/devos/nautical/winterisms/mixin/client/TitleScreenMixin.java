@@ -1,4 +1,4 @@
-package one.devos.nautical.winterisms.mixin;
+package one.devos.nautical.winterisms.mixin.client;
 
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.TitleScreen;

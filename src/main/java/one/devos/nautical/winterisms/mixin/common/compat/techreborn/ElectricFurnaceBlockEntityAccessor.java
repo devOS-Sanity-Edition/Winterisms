@@ -1,4 +1,4 @@
-package one.devos.nautical.winterisms.mixin.compat.techreborn;
+package one.devos.nautical.winterisms.mixin.common.compat.techreborn;
 
 import net.minecraft.world.item.crafting.SmeltingRecipe;
 import org.spongepowered.asm.mixin.Mixin;

@@ -1,4 +1,4 @@
-package one.devos.nautical.winterisms.mixin.compat.client.limits_grapple;
+package one.devos.nautical.winterisms.mixin.client.compat.limits_grapple;
 
 import com.bawnorton.mixinsquared.TargetHandler;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;

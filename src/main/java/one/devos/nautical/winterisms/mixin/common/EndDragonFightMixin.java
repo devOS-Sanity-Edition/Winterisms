@@ -1,4 +1,4 @@
-package one.devos.nautical.winterisms.mixin;
+package one.devos.nautical.winterisms.mixin.common;
 
 import com.bawnorton.mixinsquared.TargetHandler;
 import net.minecraft.core.BlockPos;

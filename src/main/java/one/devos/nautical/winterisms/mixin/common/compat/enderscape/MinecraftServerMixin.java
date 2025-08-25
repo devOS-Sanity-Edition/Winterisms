@@ -1,4 +1,4 @@
-package one.devos.nautical.winterisms.mixin.compat.enderscape;
+package one.devos.nautical.winterisms.mixin.common.compat.enderscape;
 
 import com.bawnorton.mixinsquared.TargetHandler;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;

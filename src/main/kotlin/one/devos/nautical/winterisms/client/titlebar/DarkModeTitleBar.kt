@@ -6,7 +6,7 @@ import one.devos.nautical.winterisms.config.Config
 import one.devos.nautical.winterisms.utils.isWindows11
 
 object DarkModeTitleBar {
-    val DWMA_USE_IMMERSIVE_DARK_MODE = 20
+    const val DWMA_USE_IMMERSIVE_DARK_MODE = 20
 
     fun darkModeTitleBarForWindows11(hwndLong: Long) {
         if (Config.windows11DarkModeTitlebar) {

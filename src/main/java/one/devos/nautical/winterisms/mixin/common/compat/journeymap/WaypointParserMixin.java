@@ -1,4 +1,4 @@
-package one.devos.nautical.winterisms.mixin.compat.journeymap;
+package one.devos.nautical.winterisms.mixin.common.compat.journeymap;
 
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import journeymap.client.waypoint.WaypointParser;

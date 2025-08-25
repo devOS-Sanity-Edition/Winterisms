@@ -1,4 +1,4 @@
-package one.devos.nautical.winterisms.mixin.compat.client.flashback;
+package one.devos.nautical.winterisms.mixin.client.compat.flashback;
 
 import com.bawnorton.mixinsquared.TargetHandler;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;

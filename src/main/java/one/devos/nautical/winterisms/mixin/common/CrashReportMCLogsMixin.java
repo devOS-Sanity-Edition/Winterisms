@@ -1,4 +1,4 @@
-package one.devos.nautical.winterisms.mixin;
+package one.devos.nautical.winterisms.mixin.common;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.CrashReport;

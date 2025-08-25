@@ -1,78 +1,82 @@
 [versions]
+better_end_island = "1.21.1-Fabric-3.1.2"
+brigadier_kotlin = "1.4.2"
+brotli = "0.1.2"
+cardinal_components = "6.1.1"
+cicada = "0.14.2+1.21-1.21.1"
+cloth_config = "15.0.140+fabric"
+do_a_barrel_roll = "3.7.3+1.21-fabric"
+enderscape = "wbBsMlR1"
+essential_elementa = "710"
+essential_universalcraft = "427" # the stanley parable number?!
+essential_vigilance = "312"
 fabric_api = "0.116.4+1.21.1"
 fabric_language_kotlin = "1.13.4+kotlin.2.2.0"
 fabric_loader = "0.16.14"
 flashback = "hQkBepoB"
 fmw = "1.0.0+build.8"
 grappling_hook = "0.7.3-1.21.1"
+ini4j = "0.5.4"
+jna = "5.17.0"
+journeymap = "1.21.1-6.0.0-beta.52+fabric"
 lattice = "1.2.10"
 midnightlib = "1.7.5+1.21.1-fabric"
 minecraft = "1.21.1"
 mixinconstraints = "1.0.9"
 mixinsquared = "0.3.3"
 modmenu = "11.0.3"
+multikeybindings = "1.0.2+1.21.1"
+polymorph = "AGMyBSJE"
+qoi = "1.2.1"
+reborn_energy = "4.1.0"
+reborncore = "5776056"
 sodium = "mc1.21.1-0.6.13-fabric"
+techreborn = "5776057"
 trinkets = "3.10.0"
 xaeros_minimap = "25.2.10_Fabric_1.21"
-enderscape = "wbBsMlR1"
-journeymap = "1.21.1-6.0.0-beta.52+fabric"
-multikeybindings = "1.0.2+1.21.1"
-techreborn = "5776057"
-reborncore = "5776056"
-cardinal_components = "6.1.1"
-polymorph = "AGMyBSJE"
-reborn_energy = "4.1.0"
-better_end_island = "1.21.1-Fabric-3.1.2"
-cloth_config = "15.0.140+fabric"
 yungs_api = "1.21.1-Fabric-5.1.6"
-essential_elementa = "710"
-essential_vigilance = "312"
-essential_universalcraft = "427" # the stanley parable number?!
-brigadier_kotlin = "1.4.2"
-ini4j = "0.5.4"
-brotli = "0.1.2"
-qoi = "1.2.1"
-jna = "5.17.0"
 
 [libraries]
+better_end_island = { module = "maven.modrinth:yungs-better-end-island", version.ref = "better_end_island" }
+brigadier_kotlin = { module = "com.github.Phyrone:brigardier-kotlin", version.ref = "brigadier_kotlin" }
+brotli = { module = "org.brotli:dec", version.ref = "brotli" }
+cardinal_components_base = { module = "org.ladysnake.cardinal-components-api:cardinal-components-base", version.ref = "cardinal_components" }
+cardinal_components_block = { module = "org.ladysnake.cardinal-components-api:cardinal-components-block", version.ref = "cardinal_components" }
+cardinal_components_entity = { module = "org.ladysnake.cardinal-components-api:cardinal-components-entity", version.ref = "cardinal_components" }
+cicada = { module = "maven.modrinth:cicada", version.ref = "cicada" }
+cloth_config = { module = "maven.modrinth:cloth-config", version.ref = "cloth_config" }
+do_a_barrel_roll = { module = "maven.modrinth:do-a-barrel-roll", version.ref = "do_a_barrel_roll" }
+enderscape = { module = "maven.modrinth:enderscape", version.ref = "enderscape" }
+essential_elementa = { module = "gg.essential:elementa", version.ref = "essential_elementa" }
+essential_universalcraft = { module = "gg.essential:universalcraft-1.21-fabric", version.ref = "essential_universalcraft" }
+essential_vigilance = { module = "gg.essential:vigilance", version.ref = "essential_vigilance" }
 fabric_api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
 fabric_language_kotlin = { module = "net.fabricmc:fabric-language-kotlin", version.ref = "fabric_language_kotlin" }
 fabric_loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric_loader" }
 flashback = { module = "maven.modrinth:flashback", version.ref = "flashback" }
 fmw = { module = "gay.asoji:fmw", version.ref = "fmw" }
 grappling_hook = { module = "io.github.moonlight_maya:Grappling-Hook", version.ref = "grappling_hook" }
+ini4j = { module = "org.ini4j:ini4j", version.ref = "ini4j" }
+jna_main = { module = "net.java.dev.jna:jna", version.ref = "jna" }
+jna_platform = { module = "net.java.dev.jna:jna-platform", version.ref = "jna" }
+journeymap = { module = "maven.modrinth:journeymap", version.ref = "journeymap" }
 lattice = { module = "com.moulberry:lattice", version.ref = "lattice" }
 midnightlib = { module = "maven.modrinth:midnightlib", version.ref = "midnightlib" }
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
 mixinconstraints = { module = "com.moulberry:mixinconstraints", version.ref = "mixinconstraints" }
 mixinsquared = { module = "com.github.bawnorton.mixinsquared:mixinsquared-fabric", version.ref = "mixinsquared" }
 modmenu = { module = "com.terraformersmc:modmenu", version.ref = "modmenu" }
+multikeybindings = { module = "maven.modrinth:multi-key-bindings", version.ref = "multikeybindings" }
+polymorph = { module = "maven.modrinth:polymorph", version.ref = "polymorph" }
+qoi_awt = { module = "me.saharnooby:qoi-java-awt", version.ref = "qoi" }
+qoi_main = { module = "me.saharnooby:qoi-java", version.ref = "qoi" }
+reborn_energy = { module = "teamreborn:energy", version.ref = "reborn_energy" }
+reborncore = { module = "curse.maven:reborncore-237903", version.ref = "reborncore" }
 sodium = { module = "maven.modrinth:sodium", version.ref = "sodium" }
+techreborn = { module = "curse.maven:techreborn-233564", version.ref = "techreborn" }
 trinkets = { module = "dev.emi:trinkets", version.ref = "trinkets" }
 xaeros_minimap = { module = "maven.modrinth:xaeros-minimap", version.ref = "xaeros_minimap" }
-enderscape = { module = "maven.modrinth:enderscape", version.ref = "enderscape" }
-journeymap = { module = "maven.modrinth:journeymap", version.ref = "journeymap" }
-multikeybindings = { module = "maven.modrinth:multi-key-bindings", version.ref = "multikeybindings" }
-techreborn = { module = "curse.maven:techreborn-233564", version.ref = "techreborn" }
-reborncore = { module = "curse.maven:reborncore-237903", version.ref = "reborncore" }
-polymorph = { module = "maven.modrinth:polymorph", version.ref = "polymorph" }
-cardinal_components_base = { module = "org.ladysnake.cardinal-components-api:cardinal-components-base", version.ref = "cardinal_components" }
-cardinal_components_block = { module = "org.ladysnake.cardinal-components-api:cardinal-components-block", version.ref = "cardinal_components" }
-cardinal_components_entity = { module = "org.ladysnake.cardinal-components-api:cardinal-components-entity", version.ref = "cardinal_components" }
-reborn_energy = { module = "teamreborn:energy", version.ref = "reborn_energy" }
-better_end_island = { module = "maven.modrinth:yungs-better-end-island", version.ref = "better_end_island" }
-cloth_config = { module = "maven.modrinth:cloth-config", version.ref = "cloth_config" }
 yungs_api = { module = "maven.modrinth:yungs-api", version.ref = "yungs_api" }
-essential_elementa = { module = "gg.essential:elementa", version.ref = "essential_elementa" }
-essential_vigilance = { module = "gg.essential:vigilance", version.ref = "essential_vigilance" }
-essential_universalcraft = { module = "gg.essential:universalcraft-1.21-fabric", version.ref = "essential_universalcraft" }
-brigadier_kotlin = { module = "com.github.Phyrone:brigardier-kotlin", version.ref = "brigadier_kotlin" }
-ini4j = { module = "org.ini4j:ini4j", version.ref = "ini4j" }
-brotli = { module = "org.brotli:dec", version.ref = "brotli" }
-qoi = { module = "me.saharnooby:qoi-java", version.ref = "qoi" }
-qoi_awt = { module = "me.saharnooby:qoi-java-awt", version.ref = "qoi" }
-jna = { module = "net.java.dev.jna:jna", version.ref = "jna" }
-jna_platform = { module = "net.java.dev.jna:jna-platform", version.ref = "jna" }
 
 [bundles]
 dev_mods = [ "sodium" ]

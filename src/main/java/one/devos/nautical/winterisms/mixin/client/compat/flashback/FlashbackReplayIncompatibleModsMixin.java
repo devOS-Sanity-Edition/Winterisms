@@ -1,4 +1,4 @@
-package one.devos.nautical.winterisms.mixin.compat.client.flashback;
+package one.devos.nautical.winterisms.mixin.client.compat.flashback;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.moulberry.flashback.Flashback;

@@ -1,4 +1,4 @@
-package one.devos.nautical.winterisms.mixin;
+package one.devos.nautical.winterisms.mixin.client;
 
 import net.minecraft.client.Minecraft;
 import one.devos.nautical.winterisms.client.titlebar.QOIWindowIcon;

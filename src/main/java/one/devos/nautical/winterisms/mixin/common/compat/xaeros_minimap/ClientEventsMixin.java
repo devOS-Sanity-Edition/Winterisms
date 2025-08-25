@@ -1,4 +1,4 @@
-package one.devos.nautical.winterisms.mixin.compat.xaeros_minimap;
+package one.devos.nautical.winterisms.mixin.common.compat.xaeros_minimap;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
