@@ -64,8 +64,8 @@ object QOIWindowIcon {
     fun okayLetsDoThisShit() {
         val step1 = Config.modpackQOIBase64Data
         val step2 = base64ToBrotliInputStream(step1)
-        val step3 = brotliToByteArray(step2)
-        val step4 = QOIDecoder.decode(brotliDecodedByteArrayToQOIDecodableInputStream(step3), 4)
+        val step3 = brotliToByteArray(step2) // CORRECTION, ALL DATA DISAPPEARS HERE, WHY IS THE BUFFER EMPTY
+        val step4 = QOIDecoder.decode(brotliDecodedByteArrayToQOIDecodableInputStream(step3), 4) // <--- ALL PIXELDATA BECOMES 0'S HERE, WHY?! THIS WORKED IN THE FUCKING TEST, WHY IS IT NOT WORKING HERE
         val step5 = QOIImageToByteArray(step4)
         val step6 = setIcon(step5)
     }
