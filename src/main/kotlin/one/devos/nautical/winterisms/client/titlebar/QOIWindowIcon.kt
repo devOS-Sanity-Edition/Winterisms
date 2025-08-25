@@ -45,21 +45,13 @@ object QOIWindowIcon {
                 val reason = STBImage.stbi_failure_reason()
                 if (reason !== null) Winterisms.LOGGER.error("Failed to load image from memory, time to blow my brains out: $reason")
 
-                if (icon == null) {
-                    return
-                }
+                if (icon == null) { return }
 
                 GLFWImage.malloc(1).use { icons ->
                     val iconImage = icons.get(0)
                     iconImage.set(32, 32, icon!!)
                     GLFW.glfwSetWindowIcon(windowHandle, icons)
                 }
-            }
-
-            GLFWImage.malloc(1).use { icons ->
-                val iconImage = icons.get(0)
-                iconImage.set(32, 32, icon!!)
-                GLFW.glfwSetWindowIcon(windowHandle, icons)
             }
         } catch (e: Exception) {
             Winterisms.LOGGER.error("Failed to set window icon from QOI Image Data: $e")
