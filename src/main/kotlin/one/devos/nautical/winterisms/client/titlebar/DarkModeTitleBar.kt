@@ -14,7 +14,7 @@ object DarkModeTitleBar {
                 val enabled = Config.windows11DarkModeTitlebar
                 val useImmersiveDarkMode = if (enabled) 1 else 0
                 val hwnd = WinDef.HWND(com.sun.jna.Pointer.createConstant(hwndLong.toInt()))
-                Dwmapi.INSTANCE.DwmSetWindowAttribute(hwnd, DWMA_USE_IMMERSIVE_DARK_MODE, intArrayOf(useImmersiveDarkMode), Integer.BYTES)
+                DwmApi.INSTANCE.DwmSetWindowAttribute(hwnd, DWMA_USE_IMMERSIVE_DARK_MODE, intArrayOf(useImmersiveDarkMode), Integer.BYTES)
             }
         }
     }

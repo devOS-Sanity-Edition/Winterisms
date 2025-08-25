@@ -93,9 +93,9 @@ fun brotliDecodedByteArrayToQOIDecodableInputStream(brotliDecodedByteArray: Byte
 
 // HOOOOOLY FUCKIN SHIT I DID IT I CANT FUCKING BELIEVE IT I CANT BELIEVE I DID IT I WROTE A REALLY SHITTY DECODER
 fun altogetherNowTestFromBase64StringToFinalQOIImage(base64String: String) {
-    val step1 = base64ToBrotliInputStream(base64String)
-    val step2 = brotliToByteArray(step1)
-    val step3 = QOIDecoder.decode(brotliDecodedByteArrayToQOIDecodableInputStream(step2), 4)
+    val step1 = base64ToBrotliInputStream(base64String) // turn the base64 string into a brotli input stream
+    val step2 = brotliToByteArray(step1) // turn the brotli input stream into a byte array
+    val step3 = QOIDecoder.decode(brotliDecodedByteArrayToQOIDecodableInputStream(step2), 4) // decode the
     val step4 = QOIUtil.writeImage(step3, File(FabricLoader.getInstance().gameDir.toFile(), "test.qoi"))
     val step5 = Winterisms.LOGGER.info("${QOIUtil.readImage(brotliDecodedByteArrayToQOIDecodableInputStream(step2)).width}, ${QOIUtil.readImage(brotliDecodedByteArrayToQOIDecodableInputStream(step2)).height}")
 }
