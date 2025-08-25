@@ -19,7 +19,7 @@ Some fixes done for the Winter's modpacks.
 ## Credits
 - BluSpring for.. basically half of this mod and why it even exists. Major major code help.
 - Cartrigger for idea of Raccoon trinket slot and the 2 raccoon slot textures
-- CephalonCosmic for internal tool to figure out which NBT files have certain values
+- CephalonCosmic for internal tool to figure out which NBT files have certain values, and fixing the internal impl for getting QOI Images working correctly
 - IThundxr for 
 - Maximumpower55 for helping with the pack, and the mclo.gs crash handling from TeaBridge
 - Oliver-makes-code for showing how to setup datapacks as a resource pack for actual working Structure NBT overriding

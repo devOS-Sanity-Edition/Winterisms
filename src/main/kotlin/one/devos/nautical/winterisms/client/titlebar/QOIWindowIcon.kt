@@ -2,26 +2,29 @@ package one.devos.nautical.winterisms.client.titlebar
 
 import me.saharnooby.qoi.QOIDecoder
 import me.saharnooby.qoi.QOIImage
-import me.saharnooby.qoi.QOIUtil
+import me.saharnooby.qoi.QOIUtilAWT
 import net.minecraft.client.Minecraft
 import one.devos.nautical.winterisms.Winterisms
 import one.devos.nautical.winterisms.config.Config
 import one.devos.nautical.winterisms.utils.base64ToBrotliInputStream
 import one.devos.nautical.winterisms.utils.brotliDecodedByteArrayToQOIDecodableInputStream
 import one.devos.nautical.winterisms.utils.brotliToByteArray
+import org.brotli.dec.BrotliInputStream
 import org.lwjgl.glfw.GLFW
 import org.lwjgl.glfw.GLFWImage
 import org.lwjgl.stb.STBImage
 import org.lwjgl.system.MemoryStack
 import java.io.ByteArrayOutputStream
+import java.io.InputStream
 import java.nio.ByteBuffer
+import javax.imageio.ImageIO
 
 object QOIWindowIcon {
     fun QOIImageToByteArray(qoiImage: QOIImage): ByteArray { // QOI
-        var outputStream = ByteArrayOutputStream()
+        val outputStream = ByteArrayOutputStream()
 
-        QOIUtil.writeImage(qoiImage, outputStream)
-
+        val bufferedImage = QOIUtilAWT.convertToBufferedImage(qoiImage)
+        ImageIO.write(bufferedImage, "PNG", outputStream)
         return outputStream.toByteArray()
     }
 
@@ -37,15 +40,26 @@ object QOIWindowIcon {
 
         try {
             MemoryStack.stackPush().use { stack ->
-                icon = loadIconBytes(qoiImageByteArrayOutput)
+                icon = loadIconBytes(qoiImageByteArrayOutput) // @TODO whYYYYYYYY
 
-                if (icon == null) { return }
+                val reason = STBImage.stbi_failure_reason()
+                if (reason !== null) Winterisms.LOGGER.error("Failed to load image from memory, time to blow my brains out: $reason")
+
+                if (icon == null) {
+                    return
+                }
 
                 GLFWImage.malloc(1).use { icons ->
                     val iconImage = icons.get(0)
                     iconImage.set(32, 32, icon!!)
                     GLFW.glfwSetWindowIcon(windowHandle, icons)
                 }
+            }
+
+            GLFWImage.malloc(1).use { icons ->
+                val iconImage = icons.get(0)
+                iconImage.set(32, 32, icon!!)
+                GLFW.glfwSetWindowIcon(windowHandle, icons)
             }
         } catch (e: Exception) {
             Winterisms.LOGGER.error("Failed to set window icon from QOI Image Data: $e")
@@ -63,10 +77,11 @@ object QOIWindowIcon {
 
     fun okayLetsDoThisShit() {
         val step1 = Config.modpackQOIBase64Data
-        val step2 = base64ToBrotliInputStream(step1)
-        val step3 = brotliToByteArray(step2) // CORRECTION, ALL DATA DISAPPEARS HERE, WHY IS THE BUFFER EMPTY
-        val step4 = QOIDecoder.decode(brotliDecodedByteArrayToQOIDecodableInputStream(step3), 4) // <--- ALL PIXELDATA BECOMES 0'S HERE, WHY?! THIS WORKED IN THE FUCKING TEST, WHY IS IT NOT WORKING HERE
-        val step5 = QOIImageToByteArray(step4)
-        val step6 = setIcon(step5)
+        val step2: BrotliInputStream = base64ToBrotliInputStream(step1)
+        val step3: ByteArray = brotliToByteArray(step2)
+        val step4: InputStream = brotliDecodedByteArrayToQOIDecodableInputStream(step3)
+        val step5: QOIImage = QOIDecoder.decode(step4, 4)
+        val step6: ByteArray = QOIImageToByteArray(step5)
+        val step7 = setIcon(step6)
     }
 }
