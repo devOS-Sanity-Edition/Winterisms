@@ -43,7 +43,7 @@ object QOIWindowIcon {
                 icon = loadIconBytes(qoiImageByteArrayOutput) // @TODO whYYYYYYYY
 
                 val reason = STBImage.stbi_failure_reason()
-                if (reason !== null) Winterisms.LOGGER.error("Failed to load image from memory, time to blow my brains out: $reason")
+                if (reason !== null) Winterisms.LOGGER.error("[Winterisms] Failed to load image from memory, time to blow my brains out: $reason")
 
                 if (icon == null) { return }
 
@@ -54,7 +54,7 @@ object QOIWindowIcon {
                 }
             }
         } catch (e: Exception) {
-            Winterisms.LOGGER.error("Failed to set window icon from QOI Image Data: $e")
+            Winterisms.LOGGER.error("[Winterisms] Failed to set window icon from QOI Image Data: $e")
         } finally {
             if (icon != null) {
                 STBImage.stbi_image_free(icon)

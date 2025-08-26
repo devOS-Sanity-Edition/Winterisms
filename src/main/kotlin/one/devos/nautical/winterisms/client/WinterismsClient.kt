@@ -13,6 +13,7 @@ import one.devos.nautical.winterisms.Winterisms
 import one.devos.nautical.winterisms.config.Config
 import one.devos.nautical.winterisms.utils.UnsupIni
 import techreborn.client.gui.GuiElectricFurnace
+import java.io.File
 
 object WinterismsClient : ClientModInitializer {
     override fun onInitializeClient() {
@@ -20,12 +21,6 @@ object WinterismsClient : ClientModInitializer {
             Config.modpackTitle = UnsupIni.brandingTitle
             Config.modpackQOIBase64Data = UnsupIni.brandingQOIBase64String
         }
-
-//        Winterisms.LOGGER.info(Config.modpackTitle)
-//        Winterisms.LOGGER.info(Config.modpackQOIBase64Data)
-//        Winterisms.LOGGER.info(brotliToByteArray(base64ToBrotliInputStream(Config.modpackQOIBase64Data)).toHexString())
-//
-//        altogetherNowTestFromBase64StringToFinalQOIImage(Config.modpackQOIBase64Data)
 
         ResourceManagerHelper.registerBuiltinResourcePack(
             ResourceLocation.fromNamespaceAndPath(Winterisms.MOD_ID, "othertexture"),

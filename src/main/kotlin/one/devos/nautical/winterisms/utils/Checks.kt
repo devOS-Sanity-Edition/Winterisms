@@ -15,10 +15,10 @@ fun isWindows11(): Boolean {
     Kernel32.INSTANCE.GetVersionEx(osVersionInfo)
 
     if (osVersionInfo.dwBuildNumber.toLong() < 22000L) {
-        Winterisms.LOGGER.info("Not running Windows 11")
+        Winterisms.LOGGER.info("[Winterisms] Not running Windows 11, will not attempt to apply dark mode titlebar.")
         return false
     }
 
-    Winterisms.LOGGER.info("Running Windows 11")
+    Winterisms.LOGGER.info("[Winterisms] Running Windows 11, will attempt to apply dark mode titlebar.")
     return true
 }

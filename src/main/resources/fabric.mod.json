@@ -26,6 +26,12 @@
 	"icon": "assets/winterisms/icon.png",
 	"environment": "*",
 	"entrypoints": {
+        "preLaunch": [
+            {
+                "adapter": "kotlin",
+                "value": "one.devos.nautical.winterisms.crash.RoombaCrash::init"
+            }
+        ],
 		"main": [
 			{
 				"adapter": "kotlin",
