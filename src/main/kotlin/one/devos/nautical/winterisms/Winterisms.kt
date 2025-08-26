@@ -3,25 +3,16 @@ package one.devos.nautical.winterisms
 import com.illusivesoulworks.polymorph.api.PolymorphApi
 import gay.asoji.fmw.FMW
 import net.fabricmc.api.ModInitializer
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents
-import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.server.network.ServerPlayerConnection
-import net.minecraft.world.BossEvent
-import one.devos.nautical.winterisms.commands.BossbarShenanigans
-import one.devos.nautical.winterisms.commands.requestCommand
-import one.devos.nautical.winterisms.commands.restartCommand
 import one.devos.nautical.winterisms.compat.polymorph.techreborn.TRElectricFurnaceDataComponent
 import one.devos.nautical.winterisms.config.oldToNewConfigConversation
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import techreborn.blockentity.machine.tier1.ElectricFurnaceBlockEntity
-import java.awt.Color
 import java.io.File
 
 object Winterisms : ModInitializer {
@@ -50,24 +41,6 @@ object Winterisms : ModInitializer {
             }
 
             null
-        }
-
-        CommandRegistrationCallback.EVENT.register { dispatcher, registryAccess, environment ->
-            requestCommand(dispatcher)
-            restartCommand(dispatcher)
-        }
-
-        ServerLifecycleEvents.SERVER_STARTED.register { server ->
-            BossbarShenanigans.dontSleepBossbar = server.customBossEvents.get(BossbarShenanigans.DONT_SLEEP_BOSSBAR_ID) ?: server.customBossEvents.create(
-                BossbarShenanigans.DONT_SLEEP_BOSSBAR_ID, Component.empty())
-
-            BossbarShenanigans.dontSleepBossbar.isVisible = false
-            BossbarShenanigans.dontSleepBossbar.max = 12000
-            BossbarShenanigans.dontSleepBossbar.color = BossEvent.BossBarColor.BLUE
-        }
-
-        ServerPlayConnectionEvents.JOIN.register { handler, sender, server ->
-            BossbarShenanigans.dontSleepBossbar.addPlayer(handler.player)
         }
 
         LOGGER.info("[${MOD_NAME}] Winterisms v${FMW.getVersion(MOD_ID)} loaded!")

@@ -10,13 +10,7 @@
 	],
 	"contributors": [
 		"asojidev",
-		"BluSpring",
-        "Cartrigger",
-        "Deftu",
-        "IThundxr",
-        "maximumpower55",
-        "Oliver-makes-code",
-        "IMS212"
+		"BluSpring"
 	],
 	"contact": {
 		"homepage": "https://devos.one/",
@@ -26,12 +20,6 @@
 	"icon": "assets/winterisms/icon.png",
 	"environment": "*",
 	"entrypoints": {
-        "preLaunch": [
-            {
-                "adapter": "kotlin",
-                "value": "one.devos.nautical.winterisms.crash.RoombaCrash::init"
-            }
-        ],
 		"main": [
 			{
 				"adapter": "kotlin",
