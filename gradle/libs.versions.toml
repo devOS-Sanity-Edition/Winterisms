@@ -1,4 +1,6 @@
 [versions]
+brigadier_kotlin = "1.4.2"
+cloth_config = "15.0.140+fabric"
 fabric_api = "0.116.4+1.21.1"
 fabric_language_kotlin = "1.13.4+kotlin.2.2.0"
 fabric_loader = "0.16.14"
@@ -25,6 +27,8 @@ reborn_energy = "4.1.0"
 better_end_island = "1.21.1-Fabric-3.1.2"
 
 [libraries]
+brigadier_kotlin = { module = "com.github.Phyrone:brigardier-kotlin", version.ref = "brigadier_kotlin" }
+cloth_config = { module = "maven.modrinth:cloth-config", version.ref = "cloth_config" }
 fabric_api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
 fabric_language_kotlin = { module = "net.fabricmc:fabric-language-kotlin", version.ref = "fabric_language_kotlin" }
 fabric_loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric_loader" }

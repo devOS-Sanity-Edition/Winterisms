@@ -48,13 +48,15 @@ dependencies {
 	include(modImplementation(libs.fmw.get())!!) // just to avoid the basic long metadata calls
 	include(implementation(annotationProcessor(libs.mixinsquared.get())!!)!!)
 	include(implementation(libs.mixinconstraints.get())!!)
+    include(implementation(libs.brigadier.kotlin.get())!!)
 
-	modImplementation(libs.grappling.hook)
+    modImplementation(libs.grappling.hook)
 	modImplementation(libs.lattice)
 	modCompileOnly(libs.xaeros.minimap)
 	modImplementation(libs.journeymap)
 	modImplementation(libs.multikeybindings)
-	modImplementation(libs.better.end.island)
+    modImplementation(libs.cloth.config)
+    modImplementation(libs.better.end.island)
 
 	modCompileOnly(libs.enderscape)
 
