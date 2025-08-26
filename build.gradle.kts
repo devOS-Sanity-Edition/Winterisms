@@ -19,6 +19,8 @@ repositories {
 	maven("https://maven.bawnorton.com/releases") // MixinSquared
 	maven("https://maven.ladysnake.org/releases")
 	maven("https://cursemaven.com") // ech. curseforge.
+    maven("https://repo.essential.gg/repository/maven-public") // Essential's Vigilance Config
+    maven("https://jitpack.io")
 }
 
 //All dependencies and their versions are in ./gradle/libs.versions.toml
@@ -41,20 +43,33 @@ dependencies {
 	modLocalRuntime(libs.bundles.dev.mods)
 
 	// Config
-	include(modImplementation(libs.midnightlib.get())!!)
+	include(implementation(libs.essential.vigilance.get())!!)
+	include(modImplementation(libs.essential.universalcraft.get())!!)
 
 //	modImplementation(files("localLibs/centered-crosshair+1.21-1.0.8.jar"))
 
 	include(modImplementation(libs.fmw.get())!!) // just to avoid the basic long metadata calls
 	include(implementation(annotationProcessor(libs.mixinsquared.get())!!)!!)
 	include(implementation(libs.mixinconstraints.get())!!)
+    include(implementation(libs.brigadier.kotlin.get())!!)
+    include(implementation(libs.ini4j.get())!!)
+    include(implementation(libs.qoi.main.get())!!)
+    include(implementation(libs.qoi.awt.get())!!)
+    include(implementation(libs.brotli.get())!!)
+    include(implementation(libs.jna.main.get())!!)
+    include(implementation(libs.jna.platform.get())!!)
 
 	modImplementation(libs.grappling.hook)
 	modImplementation(libs.lattice)
 	modCompileOnly(libs.xaeros.minimap)
 	modImplementation(libs.journeymap)
 	modImplementation(libs.multikeybindings)
+//    modImplementation(libs.yungs.api) // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    modImplementation(libs.cloth.config)
 	modImplementation(libs.better.end.island)
+    modImplementation(libs.cicada)
+    modImplementation(libs.`do`.a.barrel.roll)
+    modImplementation(libs.fabric.permissions.api) // DABR needs this but it doesnt bundle it which is dumb. so you crash on world join w/ this
 
 	modCompileOnly(libs.enderscape)
 
