@@ -1,6 +1,7 @@
 package one.devos.nautical.winterisms.mixin.common;
 
 import com.bawnorton.mixinsquared.TargetHandler;
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -20,6 +21,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 import java.util.Collection;
 
+@IfModLoaded("betterendisland")
 @Mixin(value = EndDragonFight.class, priority = 1500)
 public class EndDragonFightMixin {
     @Shadow

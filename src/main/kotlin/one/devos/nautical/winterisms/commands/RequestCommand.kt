@@ -216,8 +216,7 @@ fun requestCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
                     )
                     player.connection.send(
                         ClientboundSetSubtitleTextPacket(
-                            Component.literal("Prepare for server restart, if everyone agrees.")
-                                .append(it.source.playerOrException.name).withStyle(
+                            Component.literal("Prepare for server restart, if everyone agrees.").withStyle(
                                 ChatFormatting.GOLD
                             )
                         )

@@ -21,6 +21,7 @@ repositories {
 	maven("https://cursemaven.com") // ech. curseforge.
     maven("https://repo.essential.gg/repository/maven-public") // Essential's Vigilance Config
     maven("https://jitpack.io")
+    mavenLocal()
 }
 
 //All dependencies and their versions are in ./gradle/libs.versions.toml
@@ -43,8 +44,10 @@ dependencies {
 	modLocalRuntime(libs.bundles.dev.mods)
 
 	// Config
-	include(implementation(libs.essential.vigilance.get())!!)
-	include(modImplementation(libs.essential.universalcraft.get())!!)
+//	include(implementation(libs.essential.vigilance.get())!!)
+    modImplementation(files("localLibs/Vigilance-312-CUSTOM.jar")) // bestie i am at my fucking limit
+    include(implementation(libs.essential.elementa.get())!!)
+    include(modImplementation(libs.essential.universalcraft.get())!!)
 
 //	modImplementation(files("localLibs/centered-crosshair+1.21-1.0.8.jar"))
 
@@ -95,6 +98,10 @@ java {
 
 	sourceCompatibility = JavaVersion.VERSION_21
 	targetCompatibility = JavaVersion.VERSION_21
+}
+
+tasks.remapJar {  // bestie i am at my fucking limit
+    nestedJars.from(files("localLibs/Vigilance-312-CUSTOM.jar"))
 }
 
 tasks.jar {
