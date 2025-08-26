@@ -7,21 +7,24 @@
     "defaultRequire": 1
   },
   "mixins": [
-    "CrashReportGAIDeterrentMixin",
-    "EndDragonFightMixin",
-    "compat.enderscape.MinecraftServerMixin",
-    "compat.journeymap.WaypointParserMixin",
-    "compat.techreborn.ElectricFurnaceBlockEntityAccessor",
-    "compat.xaeros_minimap.ClientEventsMixin"
+    "common.CrashReportGenerativeAIDeterrentMixin",
+    "common.CrashReportMCLogsMixin",
+    "common.EndDragonFightMixin",
+    "common.compat.enderscape.MinecraftServerMixin",
+    "common.compat.journeymap.WaypointParserMixin",
+    "common.compat.techreborn.ElectricFurnaceBlockEntityAccessor",
+    "common.compat.xaeros_minimap.ClientEventsMixin"
   ],
   "client": [
-    "DisableVanillaTitle",
-    "KeyBindsScreenMixin",
-    "KeyMappingAccessor",
-    "TitleScreenMixin",
-    "compat.client.flashback.FlashbackReplayIncompatibleModsMixin",
-    "compat.client.flashback.FlashbackReplayIncompatibleModsTitleScreenMixin",
-    "compat.client.limits_grapple.LimitsGrappleInGameHudColorMixin",
-    "compat.client.multikeybindings.MultiKeyBindingsHandledScreenMixin"
+    "client.DisableVanillaTitle",
+    "client.KeyBindsScreenMixin",
+    "client.KeyMappingAccessor",
+    "client.TitleScreenMixin",
+    "client.WindowQOIDataMixin",
+    "client.WindowTitlebarMixin",
+    "client.compat.flashback.FlashbackReplayIncompatibleModsMixin",
+    "client.compat.flashback.FlashbackReplayIncompatibleModsTitleScreenMixin",
+    "client.compat.limits_grapple.LimitsGrappleInGameHudColorMixin",
+    "client.compat.multikeybindings.MultiKeyBindingsHandledScreenMixin"
   ]
 }

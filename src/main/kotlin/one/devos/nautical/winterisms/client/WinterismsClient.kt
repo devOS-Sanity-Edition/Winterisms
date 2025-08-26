@@ -11,10 +11,17 @@ import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
 import one.devos.nautical.winterisms.Winterisms
 import one.devos.nautical.winterisms.config.Config
+import one.devos.nautical.winterisms.utils.UnsupIni
 import techreborn.client.gui.GuiElectricFurnace
+import java.io.File
 
 object WinterismsClient : ClientModInitializer {
     override fun onInitializeClient() {
+        if (UnsupIni.unsupIniFile.exists()) {
+            Config.modpackTitle = UnsupIni.brandingTitle
+            Config.modpackQOIBase64Data = UnsupIni.brandingQOIBase64String
+        }
+
         ResourceManagerHelper.registerBuiltinResourcePack(
             ResourceLocation.fromNamespaceAndPath(Winterisms.MOD_ID, "othertexture"),
             FabricLoader.getInstance().getModContainer(Winterisms.MOD_ID).get(),
