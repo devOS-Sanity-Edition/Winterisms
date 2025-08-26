@@ -10,7 +10,13 @@
 	],
 	"contributors": [
 		"asojidev",
-		"BluSpring"
+		"BluSpring",
+        "Cartrigger",
+        "Deftu",
+        "IThundxr",
+        "maximumpower55",
+        "Oliver-makes-code",
+        "IMS212"
 	],
 	"contact": {
 		"homepage": "https://devos.one/",
@@ -20,6 +26,12 @@
 	"icon": "assets/winterisms/icon.png",
 	"environment": "*",
 	"entrypoints": {
+        "preLaunch": [
+            {
+                "adapter": "kotlin",
+                "value": "one.devos.nautical.winterisms.crash.RoombaCrash::init"
+            }
+        ],
 		"main": [
 			{
 				"adapter": "kotlin",
@@ -37,7 +49,13 @@
 				"adapter": "kotlin",
 				"value": "one.devos.nautical.winterisms.compat.polymorph.WinterismsPolymorphComponents"
 			}
-		]
+		],
+        "modmenu": [
+            {
+                "adapter": "kotlin",
+                "value": "one.devos.nautical.winterisms.config.ConfigEntrypoint"
+            }
+        ]
 	},
 	"mixins": [
 		"winterisms.mixins.json"
