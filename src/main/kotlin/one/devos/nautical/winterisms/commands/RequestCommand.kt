@@ -75,73 +75,44 @@ fun requestCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
                 }
 
                 for (player in it.playerList.players) {
-
                     // harrassing peoples ears to get them to not sleep is very funny.
-                    when (ticks) {
-                        6 * 20 -> player.connection.send(
-                            ClientboundSoundPacket(
-                                Holder.direct(SoundEvents.BELL_BLOCK),
+                    ServerTickEvents.END_SERVER_TICK.register {
+                        when (ticks) {
+                            6 * 20 -> player.playNotifySound(
+                                SoundEvents.BELL_BLOCK,
                                 SoundSource.MASTER,
-                                player.x,
-                                player.y,
-                                player.z,
-                                1.0F,
-                                1.0F,
-                                0
+                                1.0f,
+                                10f,
                             )
-                        )
 
-                        5 * 20 -> player.connection.send(
-                            ClientboundSoundPacket(
-                                Holder.direct(SoundEvents.BELL_BLOCK),
+                            5 * 20 -> player.playNotifySound(
+                                SoundEvents.BELL_BLOCK,
                                 SoundSource.MASTER,
-                                player.x,
-                                player.y,
-                                player.z,
-                                1.0F,
-                                1.0F,
-                                0
+                                1.0f,
+                                10f,
                             )
-                        )
 
-                        4 * 20 -> player.connection.send(
-                            ClientboundSoundPacket(
-                                Holder.direct(SoundEvents.BELL_BLOCK),
+                            4 * 20 -> player.playNotifySound(
+                                SoundEvents.BELL_BLOCK,
                                 SoundSource.MASTER,
-                                player.x,
-                                player.y,
-                                player.z,
-                                1.0F,
-                                1.0F,
-                                0
+                                1.0f,
+                                10f,
                             )
-                        )
 
-                        3 * 20 -> player.connection.send(
-                            ClientboundSoundPacket(
-                                Holder.direct(SoundEvents.BELL_BLOCK),
+                            3 * 20 -> player.playNotifySound(
+                                SoundEvents.BELL_BLOCK,
                                 SoundSource.MASTER,
-                                player.x,
-                                player.y,
-                                player.z,
-                                1.0F,
-                                1.0F,
-                                0
+                                1.0f,
+                                10f,
                             )
-                        )
 
-                        2 * 20 -> player.connection.send(
-                            ClientboundSoundPacket(
-                                Holder.direct(SoundEvents.BELL_BLOCK),
+                            2 * 20 -> player.playNotifySound(
+                                SoundEvents.BELL_BLOCK,
                                 SoundSource.MASTER,
-                                player.x,
-                                player.y,
-                                player.z,
-                                1.0F,
-                                1.0F,
-                                0
+                                1.0f,
+                                10f,
                             )
-                        )
+                        }
                     }
                 }
             }
@@ -157,8 +128,9 @@ fun requestCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
 
         literal("attention") {
             runs {
+                ticks = 7 * 20
                 for (player in it.source.server.playerList.players) {
-                    player.connection.send(ClientboundSetTitlesAnimationPacket(10, 200, 10))
+                    player.connection.send(ClientboundSetTitlesAnimationPacket(10, 120, 10))
 
                     player.connection.send(
                         ClientboundSetTitleTextPacket(
@@ -181,6 +153,48 @@ fun requestCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
                     )
                 }
             }
+
+            ServerTickEvents.END_SERVER_TICK.register {
+                ticks--
+
+                for (player in it.playerList.players) {
+                    when (ticks) {
+                        6 * 20 -> player.playNotifySound(
+                            SoundEvents.ANVIL_FALL,
+                            SoundSource.MASTER,
+                            1.0f,
+                            10f,
+                        )
+
+                        5 * 20 -> player.playNotifySound(
+                            SoundEvents.ANVIL_FALL,
+                            SoundSource.MASTER,
+                            1.0f,
+                            10f,
+                        )
+
+                        4 * 20 -> player.playNotifySound(
+                            SoundEvents.ANVIL_FALL,
+                            SoundSource.MASTER,
+                            1.0f,
+                            10f,
+                        )
+
+                        3 * 20 -> player.playNotifySound(
+                            SoundEvents.ANVIL_FALL,
+                            SoundSource.MASTER,
+                            1.0f,
+                            10f,
+                        )
+                        2 * 20 -> player.playNotifySound(
+                            SoundEvents.ANVIL_FALL,
+                            SoundSource.MASTER,
+                            1.0f,
+                            10f,
+                        )
+                    }
+                }
+            }
         }
 
         // i hate this, i feel it should be in the require block with the has permission nested as well but no that's
@@ -189,6 +203,8 @@ fun requestCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
         literal("serverRestart") {
             runs {
                 for (player in it.source.server.playerList.players) {
+                    player.playNotifySound(SoundEvents.ENDER_DRAGON_GROWL, SoundSource.MASTER, 1.0f, 1.0f)
+
                     player.connection.send(ClientboundSetTitlesAnimationPacket(10, 200, 10))
 
                     player.connection.send(
@@ -207,12 +223,14 @@ fun requestCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
                         )
                     )
 
-                    player.displayClientMessage(
-                        Component.literal("An admin has requested for a server restart! Please prepare, if everyone agrees."),
+                    it.source.sendSuccess(
+                        { Component.literal("An admin has requested for a server restart! Please prepare, if everyone agrees.") },
                         false
                     )
                 }
             }
+
+
         }
     }
 }
