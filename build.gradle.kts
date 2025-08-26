@@ -69,6 +69,7 @@ dependencies {
 	modImplementation(libs.better.end.island)
     modImplementation(libs.cicada)
     modImplementation(libs.`do`.a.barrel.roll)
+    modImplementation(libs.fabric.permissions.api) // DABR needs this but it doesnt bundle it which is dumb. so you crash on world join w/ this
 
 	modCompileOnly(libs.enderscape)
 

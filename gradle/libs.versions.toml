@@ -13,6 +13,7 @@ essential_vigilance = "312"
 fabric_api = "0.116.4+1.21.1"
 fabric_language_kotlin = "1.13.4+kotlin.2.2.0"
 fabric_loader = "0.16.14"
+fabric_permissions_api = "0.3.1"
 flashback = "hQkBepoB"
 fmw = "1.0.0+build.8"
 grappling_hook = "0.7.3-1.21.1"
@@ -53,6 +54,7 @@ essential_vigilance = { module = "gg.essential:vigilance", version.ref = "essent
 fabric_api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
 fabric_language_kotlin = { module = "net.fabricmc:fabric-language-kotlin", version.ref = "fabric_language_kotlin" }
 fabric_loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric_loader" }
+fabric_permissions_api = { module = "me.lucko:fabric-permissions-api", version.ref = "fabric_permissions_api" }
 flashback = { module = "maven.modrinth:flashback", version.ref = "flashback" }
 fmw = { module = "gay.asoji:fmw", version.ref = "fmw" }
 grappling_hook = { module = "io.github.moonlight_maya:Grappling-Hook", version.ref = "grappling_hook" }

@@ -3,19 +3,41 @@ package one.devos.nautical.winterisms.commands
 import com.mojang.brigadier.CommandDispatcher
 import de.phyrone.brig.wrapper.literal
 import de.phyrone.brig.wrapper.runs
+import net.fabricmc.fabric.api.entity.event.v1.EntitySleepEvents
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents
 import net.minecraft.ChatFormatting
 import net.minecraft.commands.CommandSourceStack
+import net.minecraft.core.Holder
 import net.minecraft.network.chat.Component
 import net.minecraft.network.protocol.game.ClientboundSetSubtitleTextPacket
 import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket
 import net.minecraft.network.protocol.game.ClientboundSetTitlesAnimationPacket
+import net.minecraft.network.protocol.game.ClientboundSoundPacket
+import net.minecraft.sounds.SoundEvents
+import net.minecraft.sounds.SoundSource
+import net.minecraft.world.entity.player.Player
 
 fun requestCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
+    var ticks = 0
+    var isSleepDisabledActive = false
+
     dispatcher.literal("request") {
         literal("dontSleep") {
             runs {
+                if (it.source.server.overworld().isDay) {
+                    it.source.sendSystemMessage(Component.literal("You cannot run this command while it's still daytime!"))
+                    return@runs
+                }
+
+                isSleepDisabledActive = true
+                BossbarShenanigans.dontSleepBossbar.name = Component.literal("Sleep is currently disabled by ").append(it.source.playerOrException.name).append("; Progress until next day start")
+                BossbarShenanigans.dontSleepBossbar.isVisible = true
+                BossbarShenanigans.dontSleepBossbar.value = 24000 - (it.source.server.overworld().dayTime % 24000L).toInt()
+
                 for (player in it.source.server.playerList.players) {
-                    player.connection.send(ClientboundSetTitlesAnimationPacket(10, 200, 10))
+                    ticks = 7 * 20
+
+                    player.connection.send(ClientboundSetTitlesAnimationPacket(10, 120, 10))
 
                     player.connection.send(
                         ClientboundSetTitleTextPacket(
@@ -32,11 +54,104 @@ fun requestCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
                         )
                     )
 
-                    player.displayClientMessage(
-                        Component.literal(it.source.playerOrException.name.string)
-                            .append(" has requested that players do not sleep!"), false
+                    it.source.sendSuccess(
+                        {
+                            Component.literal(it.source.playerOrException.name.string).append(" has requested that players do not sleep!")
+                        }, true
                     )
                 }
+            }
+
+            ServerTickEvents.END_SERVER_TICK.register {
+                if (!isSleepDisabledActive) { return@register }
+
+                ticks--
+
+                BossbarShenanigans.dontSleepBossbar.value = 24000 - (it.overworld().dayTime % 24000L).toInt()
+
+                if (it.overworld().isDay) {
+                    isSleepDisabledActive = false
+                    BossbarShenanigans.dontSleepBossbar.isVisible = false
+                }
+
+                for (player in it.playerList.players) {
+
+                    // harrassing peoples ears to get them to not sleep is very funny.
+                    when (ticks) {
+                        6 * 20 -> player.connection.send(
+                            ClientboundSoundPacket(
+                                Holder.direct(SoundEvents.BELL_BLOCK),
+                                SoundSource.MASTER,
+                                player.x,
+                                player.y,
+                                player.z,
+                                1.0F,
+                                1.0F,
+                                0
+                            )
+                        )
+
+                        5 * 20 -> player.connection.send(
+                            ClientboundSoundPacket(
+                                Holder.direct(SoundEvents.BELL_BLOCK),
+                                SoundSource.MASTER,
+                                player.x,
+                                player.y,
+                                player.z,
+                                1.0F,
+                                1.0F,
+                                0
+                            )
+                        )
+
+                        4 * 20 -> player.connection.send(
+                            ClientboundSoundPacket(
+                                Holder.direct(SoundEvents.BELL_BLOCK),
+                                SoundSource.MASTER,
+                                player.x,
+                                player.y,
+                                player.z,
+                                1.0F,
+                                1.0F,
+                                0
+                            )
+                        )
+
+                        3 * 20 -> player.connection.send(
+                            ClientboundSoundPacket(
+                                Holder.direct(SoundEvents.BELL_BLOCK),
+                                SoundSource.MASTER,
+                                player.x,
+                                player.y,
+                                player.z,
+                                1.0F,
+                                1.0F,
+                                0
+                            )
+                        )
+
+                        2 * 20 -> player.connection.send(
+                            ClientboundSoundPacket(
+                                Holder.direct(SoundEvents.BELL_BLOCK),
+                                SoundSource.MASTER,
+                                player.x,
+                                player.y,
+                                player.z,
+                                1.0F,
+                                1.0F,
+                                0
+                            )
+                        )
+                    }
+                }
+            }
+
+            EntitySleepEvents.ALLOW_SLEEPING.register { player, sleepingPos ->
+                if (isSleepDisabledActive) {
+                    return@register Player.BedSleepingProblem.OTHER_PROBLEM
+                }
+
+                return@register null
             }
         }
 
@@ -85,14 +200,16 @@ fun requestCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
                     )
                     player.connection.send(
                         ClientboundSetSubtitleTextPacket(
-                            Component.literal("Prepare for server restart, if everyone agrees.").append(it.source.playerOrException.name).withStyle(
+                            Component.literal("Prepare for server restart, if everyone agrees.")
+                                .append(it.source.playerOrException.name).withStyle(
                                 ChatFormatting.GOLD
                             )
                         )
                     )
 
                     player.displayClientMessage(
-                        Component.literal("An admin has requested for a server restart! Please prepare, if everyone agrees."), false
+                        Component.literal("An admin has requested for a server restart! Please prepare, if everyone agrees."),
+                        false
                     )
                 }
             }
