@@ -34,8 +34,8 @@ fun requestCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
                 BossbarShenanigans.dontSleepBossbar.isVisible = true
                 BossbarShenanigans.dontSleepBossbar.value = 24000 - (it.source.server.overworld().dayTime % 24000L).toInt()
 
+                ticks = 7 * 20
                 for (player in it.source.server.playerList.players) {
-                    ticks = 7 * 20
 
                     player.connection.send(ClientboundSetTitlesAnimationPacket(10, 120, 10))
 
