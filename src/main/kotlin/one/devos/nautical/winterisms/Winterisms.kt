@@ -11,7 +11,6 @@ import net.fabricmc.fabric.api.resource.ResourcePackActivationType
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.server.network.ServerPlayerConnection
 import net.minecraft.world.BossEvent
 import one.devos.nautical.winterisms.commands.BossbarShenanigans
 import one.devos.nautical.winterisms.commands.requestCommand
@@ -21,7 +20,6 @@ import one.devos.nautical.winterisms.config.oldToNewConfigConversation
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import techreborn.blockentity.machine.tier1.ElectricFurnaceBlockEntity
-import java.awt.Color
 import java.io.File
 
 object Winterisms : ModInitializer {

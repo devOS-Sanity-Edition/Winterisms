@@ -13,7 +13,6 @@ import one.devos.nautical.winterisms.Winterisms
 import one.devos.nautical.winterisms.config.Config
 import one.devos.nautical.winterisms.utils.UnsupIni
 import techreborn.client.gui.GuiElectricFurnace
-import java.io.File
 
 object WinterismsClient : ClientModInitializer {
     override fun onInitializeClient() {
