@@ -4,7 +4,7 @@ import com.illusivesoulworks.polymorph.common.integration.AbstractCompatibilityM
 import net.minecraft.world.item.crafting.RecipeHolder
 import net.minecraft.world.item.crafting.SmeltingRecipe
 import net.minecraft.world.level.block.entity.BlockEntity
-import one.devos.nautical.winterisms.mixin.common.compat.techreborn.ElectricFurnaceBlockEntityAccessor
+import one.devos.nautical.winterisms.mixin.compat.techreborn.ElectricFurnaceBlockEntityAccessor
 import techreborn.blockentity.machine.tier1.ElectricFurnaceBlockEntity
 
 class TRElectricFurnaceModule : AbstractCompatibilityModule() {
