@@ -15,6 +15,17 @@ Some fixes done for the Winter's modpacks.
 - Potential Problem Mods screen on first startup
 - Be able to click on Journeymap formatted waypoints if you use Xaero's [Journey already integrates the other way around]
 - Everyone in the end during an end fight gets a dragon egg
+- Dark Titlebar [Windows 11 only]
+- Ability to change titlebar and icon [Must be a 32x32 Brotli-compressed QOI Image in Base64 string form] [Converter here](https://qoi.y2k.diy/)
+- Ability to read unsup.ini files in pack folder to set icon [Must be a 32x32 Brotli-compressed QOI Image in Base64 string form] and titlebar
+- `request` commands, notably `request dontSleep`, `request attention` and [OP Level 4 only] `request serverRestart`
+- `restart` command that saves, does a 15 second countdown, and then stops server [and let Pelican/Pterodactyl start server back up under assumption]
+- Generative AI deterrent in logs
+- Uploads crash logs automatically and opens up browser
+
+A lot of this can be found in the mod's config, which is powered by [Vigilance](https://github.com/EssentialGG/Vigilance)
+
+![java_axPRlxeTJb](https://github.com/user-attachments/assets/503969a7-b709-4ccd-baac-2195fc5fca29)
 
 ## Credits
 - BluSpring for.. basically half of this mod and why it even exists. Major major code help.
