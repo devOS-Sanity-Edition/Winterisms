@@ -29,7 +29,7 @@ object Config : Vigilant(
     init {
         // all plans of using internationalization has fallen apart so we have to hard code for now, at least until
         // there's a way you can custom define in the config what a key is, so forgive me for hardcoding this mfer
-        category("--- Howdy ---") {
+        category("Home") {
             subcategory("Contributing") {
                 button("GitHub", "Where the source code is!", "GitHub Page") {
                     Util.getPlatform().openUri("https://github.com/devOS-Sanity-Edition/Winterisms")
@@ -79,16 +79,14 @@ object Config : Vigilant(
             }
         }
 
-        category("Fixes") {
+        category("Modifications") {
             subcategory("Map Mods") {
                 switch(::xaerosJourneyFix,
                     "Allow Waypoint Chat Cross-Compat",
                     "This allows either waypoints to be clickable in chat, as if it was native to said map mod, meaning if you're on Xaero's, you can click JourneyMap Waypoints, and same for the reverse."
                 )
             }
-        }
 
-        category("Modifications") {
             subcategory("Limits' Grapple") {
                 color(::limitsGrappleHitColor,
                     "Hit Color",
@@ -158,8 +156,8 @@ object Config : Vigilant(
             }
         }
 
-        setCategoryDescription("--- Howdy ---", "§6Howdy! Welcome to Winterisms v3.§r\n\nA lot of time and effort has been put to try to make this release better, with a few more options and tweaks compared to other versions. That being said, feel free to look around the options and adjust to your liking.\n")
-        setSubcategoryDescription("--- Howdy ---", "Credits", "Here's all the §6amazing§r people who have contributed to the development of both Winter's Summer and the Winterisms mod itself!")
+        setCategoryDescription("Home", "§6Howdy! Welcome to Winterisms v3.§r\n\nA lot of time and effort has been put to try to make this release better, with a few more options and tweaks compared to other versions. That being said, feel free to look around the options and adjust to your liking.\n")
+        setSubcategoryDescription("Home", "Credits", "Here's all the §6amazing§r people who have contributed to the development of both Winter's Summer and the Winterisms mod itself!")
         setSubcategoryDescription("Winter's Modpacks", "Pack Settings", "§cWarning: §rPlease do not touch any of these settings. They're here as easy exposure for modpack creators, but unless you know what you're doing or have a good reason to change them, please do not change any of these settings.\n\n§6If an unsup.ini exists in your pack's game directory, that will override whatever you put here. Modify the unsup.ini, or don't have one if you want to change the pack title and/or icon. Whatever changes you make to this subcategory §c§lwill not§r§6 apply if an unsup.ini is present, otherwise, just restart your game.")
 
         initialize()
