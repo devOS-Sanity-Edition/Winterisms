@@ -1,5 +1,6 @@
 package one.devos.nautical.winterisms.mixin.client;
 
+import com.sun.jna.Platform;
 import net.minecraft.client.Minecraft;
 import one.devos.nautical.winterisms.client.titlebar.DarkModeTitleBar;
 import org.lwjgl.glfw.GLFWNativeWin32;
@@ -12,9 +13,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class WindowTitlebarMixin {
     @Inject(method = "setWindowActive", at = @At("HEAD"))
     private void titlebar(boolean windowActive, CallbackInfo ci) {
-        long window = Minecraft.getInstance().getWindow().getWindow();
-        int windowId = (int) GLFWNativeWin32.glfwGetWin32Window(window);
+        if (Platform.isWindows()) {
+            long window = Minecraft.getInstance().getWindow().getWindow();
+            int windowId = (int) GLFWNativeWin32.glfwGetWin32Window(window);
 
-        DarkModeTitleBar.INSTANCE.darkModeTitleBarForWindows11(windowId);
+            DarkModeTitleBar.INSTANCE.darkModeTitleBarForWindows11(windowId);
+        }
     }
 }
