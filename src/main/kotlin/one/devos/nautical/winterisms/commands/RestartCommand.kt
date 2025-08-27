@@ -8,6 +8,8 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents
 import net.minecraft.ChatFormatting
 import net.minecraft.commands.CommandSourceStack
 import net.minecraft.network.chat.Component
+import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket
+import net.minecraft.network.protocol.game.ClientboundSetTitlesAnimationPacket
 
 val ERROR_FAILED = SimpleCommandExceptionType(Component.translatable("commands.save.failed"))
 
@@ -26,17 +28,19 @@ fun restartCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
     dispatcher.literal("restart") {
         require { hasPermission(4) }
         runs {
-            it.source.sendSuccess({ Component.literal("Saving server quickly first..").withStyle(ChatFormatting.GREEN) }, true)
-            didServerSaveCorrectly = it.source.server.saveEverything(false, false, true)
+            for (player in it.source.server.playerList.players) {
+                player.displayClientMessage(Component.literal("Saving server quickly first..").withStyle(ChatFormatting.GREEN), false)
+                didServerSaveCorrectly = it.source.server.saveEverything(false, false, true)
 
-            if (didServerSaveCorrectly) {
-                it.source.sendSuccess({ Component.literal("Saved server!").withStyle(ChatFormatting.GREEN) }, true)
-                ticks = 15 * 20
-                lastSource = it.source
-                it.source.sendSuccess({ 15.rebooting() }, true)
-            } else {
-                it.source.sendSuccess({ Component.literal("Server failed to save!").withStyle(ChatFormatting.RED) }, true)
-                throw ERROR_FAILED.create()
+                if (didServerSaveCorrectly) {
+                    player.displayClientMessage(Component.literal("Saved server!").withStyle(ChatFormatting.GREEN), false)
+                    ticks = 15 * 20
+                    lastSource = it.source
+                    player.displayClientMessage(15.rebooting(), false)
+                } else {
+                    player.displayClientMessage(Component.literal("Server failed to save!").withStyle(ChatFormatting.RED), false)
+                    throw ERROR_FAILED.create()
+                }
             }
         }
     }
@@ -55,14 +59,21 @@ fun restartCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
         }
 
         if (message != null) {
-            lastSource?.sendSuccess({ message }, true)
+            for (player in server.playerList.players) {
+                player.displayClientMessage(message, false)
+                player.connection.send(ClientboundSetTitlesAnimationPacket(0, 20, 0))
+                player.connection.send(ClientboundSetTitleTextPacket(message))
+            }
         }
 
         if (ticks >= 0) {
             return@register
         }
 
-        lastSource?.sendSuccess({ Component.literal("Stopping server...")}, true)
+        for (player in server.playerList.players) {
+            player.displayClientMessage(Component.literal("Restarting server...").withStyle(ChatFormatting.GREEN), false)
+        }
+
         lastSource?.server?.halt(false)
     }
 }
