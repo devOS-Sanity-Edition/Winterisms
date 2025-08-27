@@ -20,10 +20,9 @@ private fun Int.rebooting(): Component {
 }
 
 fun restartCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
-    var ticks = 0
+    var ticks = -1
     var startCountdown = false
     var didServerSaveCorrectly = false
-    var lastSource: CommandSourceStack? = null
 
     dispatcher.literal("restart") {
         require { hasPermission(4) }
@@ -35,8 +34,8 @@ fun restartCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
                 if (didServerSaveCorrectly) {
                     player.displayClientMessage(Component.literal("Saved server!").withStyle(ChatFormatting.GREEN), false)
                     ticks = 15 * 20
-                    lastSource = it.source
                     player.displayClientMessage(15.rebooting(), false)
+                    player.connection.send(ClientboundSetTitleTextPacket(Component.literal("Rebooting in 15 second(s)")))
                 } else {
                     player.displayClientMessage(Component.literal("Server failed to save!").withStyle(ChatFormatting.RED), false)
                     throw ERROR_FAILED.create()
@@ -46,6 +45,7 @@ fun restartCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
     }
 
     ServerTickEvents.END_SERVER_TICK.register { server ->
+        if (ticks < 0) return@register
         ticks--
 
         val message = when (ticks) {
@@ -61,7 +61,7 @@ fun restartCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
         if (message != null) {
             for (player in server.playerList.players) {
                 player.displayClientMessage(message, false)
-                player.connection.send(ClientboundSetTitlesAnimationPacket(0, 20, 0))
+                player.connection.send(ClientboundSetTitlesAnimationPacket(5, 25, 5))
                 player.connection.send(ClientboundSetTitleTextPacket(message))
             }
         }
@@ -74,6 +74,6 @@ fun restartCommand(dispatcher: CommandDispatcher<CommandSourceStack>) {
             player.displayClientMessage(Component.literal("Restarting server...").withStyle(ChatFormatting.GREEN), false)
         }
 
-        lastSource?.server?.halt(false)
+        server.halt(false)
     }
 }
