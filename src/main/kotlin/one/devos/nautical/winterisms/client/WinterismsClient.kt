@@ -17,8 +17,10 @@ import techreborn.client.gui.GuiElectricFurnace
 object WinterismsClient : ClientModInitializer {
     override fun onInitializeClient() {
         if (UnsupIni.unsupIniFile.exists()) {
-            Config.modpackTitle = UnsupIni.brandingTitle
-            Config.modpackQOIBase64Data = UnsupIni.brandingQOIBase64String
+            run {
+                Config.modpackTitle = UnsupIni.brandingTitle ?: return@run
+                Config.modpackQOIBase64Data = UnsupIni.brandingQOIBase64String ?: return@run
+            }
         }
 
         ResourceManagerHelper.registerBuiltinResourcePack(
