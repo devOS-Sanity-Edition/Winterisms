@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 // Multi Key Bindings logs on every mouse click in a UI, so we're just gonna null and void that. Why that logger call is
 // left there, I have no fucking clue.
-@IfModLoaded("multi-key-bindings")
+@IfModLoaded(value = "multi-key-bindings", maxVersion = "1.0.2+1.21.1")
 @Mixin(value = AbstractContainerScreen.class, priority = 1500)
 public class MultiKeyBindingsHandledScreenMixin {
     @TargetHandler(mixin = "us.kenny.mixin.HandledScreenMixin", name = "onMouseClicked")
